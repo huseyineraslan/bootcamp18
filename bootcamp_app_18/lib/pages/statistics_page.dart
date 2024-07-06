@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class StatisticsPage extends StatelessWidget {
-  const StatisticsPage({Key? key}) : super(key: key);
+  const StatisticsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +17,15 @@ class StatisticsPage extends StatelessWidget {
 }
 
 class BMIWidget extends StatefulWidget {
-  const BMIWidget({Key? key}) : super(key: key);
+  const BMIWidget({super.key});
 
   @override
-  _BMIWidgetState createState() => _BMIWidgetState();
+  BMIWidgetState createState() => BMIWidgetState();
 }
 
-class _BMIWidgetState extends State<BMIWidget> {
-  TextEditingController _heightController = TextEditingController();
-  TextEditingController _weightController = TextEditingController();
+class BMIWidgetState extends State<BMIWidget> {
+  final TextEditingController _heightController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
   double? _bmiResult;
 
   @override
@@ -38,39 +38,41 @@ class _BMIWidgetState extends State<BMIWidget> {
           TextField(
             controller: _heightController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Boy (metre cinsinden)',
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           TextField(
             controller: _weightController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Kilo (kg cinsinden)',
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           TextButton.icon(
             onPressed: () {
               _calculateBMI();
             },
-            icon: Icon(Icons.calculate, color: Colors.white),
-            label: const Text('BMI Hesapla', style: TextStyle(color: Colors.white)),
+            icon: const Icon(Icons.calculate, color: Colors.white),
+            label: const Text('BMI Hesapla',
+                style: TextStyle(color: Colors.white)),
             style: TextButton.styleFrom(
               backgroundColor: Colors.blueGrey,
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           _bmiResult != null
               ? Text(
-            'BMI: ${_bmiResult!.toStringAsFixed(2)}',
-            style: TextStyle(fontSize: 20.0),
-          )
+                  'BMI: ${_bmiResult!.toStringAsFixed(2)}',
+                  style: const TextStyle(fontSize: 20.0),
+                )
               : Container(),
         ],
       ),

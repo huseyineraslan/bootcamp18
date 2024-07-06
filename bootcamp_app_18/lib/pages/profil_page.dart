@@ -10,6 +10,7 @@ class ProfilPage extends StatefulWidget {
 
 class _ProfilPageState extends State<ProfilPage> {
   final _phoneNumberController = TextEditingController();
+
   //Phone number will be checked with _focusNode when writing is finished
   final _focusNode = FocusNode();
   bool? _isValid;
@@ -87,6 +88,13 @@ class _ProfilPageState extends State<ProfilPage> {
             //Bu kısma farklı profil bilgi girş kısımları eklenecek
 //----------------------------
 
+/*
+Dünya genelinde kullanılan telefon 
+numaralarının maksimum uzunluğu genellikle 15 hane olarak kabul edilir.
+Bu standart, Uluslararası Telekomünikasyon Birliği (ITU) tarafından belirlenen 
+E.164 numaralandırma planına dayanmaktadır. E.164 formatında bir telefon numarası, 
+ülke kodu da dahil olmak üzere maksimum 15 basamaktan oluşabilir.
+*/
             //Geçerli Telefon Numarası kontrolü
             Row(
               children: [
@@ -95,6 +103,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   child: TextField(
                     controller: _phoneNumberController,
                     focusNode: _focusNode,
+                    maxLength: 15,
                     decoration: const InputDecoration(
                       labelText: 'Phone Number (+X0564XXXXXXX)',
                       labelStyle: TextStyle(color: Colors.white),

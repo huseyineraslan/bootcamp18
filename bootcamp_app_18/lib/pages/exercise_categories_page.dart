@@ -63,6 +63,7 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
                             BlendMode.dstATop, //renk efekti
                           ),
                         ),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),

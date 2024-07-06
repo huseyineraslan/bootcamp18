@@ -7,10 +7,10 @@ class ExercisesPage extends StatefulWidget {
   const ExercisesPage({super.key, required this.categoryId});
 
   @override
-  _ExercisesPageState createState() => _ExercisesPageState();
+  ExercisesPageState createState() => ExercisesPageState();
 }
 
-class _ExercisesPageState extends State<ExercisesPage> {
+class ExercisesPageState extends State<ExercisesPage> {
   List exercises = [];
   bool isLoading = true;
 

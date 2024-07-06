@@ -14,13 +14,14 @@ class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   double appBarHeight = 50;
   double motivationCardHeight = 250;
   late double aspectRatio; //grid height
+  bool _imagesPrecached = false;
 
   int _currentIndex = 0;
 
@@ -36,6 +37,13 @@ class _HomePageState extends State<HomePage> {
     //initState den sonra builden önce çalışır
     super.didChangeDependencies();
     calculateAspectRatio();
+    // Tüm resimleri önbeleğe yükle - yükleme yapılmamma durumunda gecikme meydana gelmektedir.
+    if (!_imagesPrecached) {
+      for (var quote in MotivationalQuotes.quotes) {
+        precacheImage(AssetImage(quote['image']!), context);
+      }
+      _imagesPrecached = true; // Tekrar çağrılmasını önlemek için
+    }
   }
 
   @override
@@ -86,7 +94,6 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 height: motivationCardHeight,
                 width: double.infinity,
-                //resim
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
@@ -95,7 +102,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                //motivasyon sözleri
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
