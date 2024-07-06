@@ -8,7 +8,7 @@
 |---------------------|----------------|-----------------|
 | Kemal Akarca | Scrum Master   |                 |
 | Güller Kalyoncu      | Product Owner  |                 |
-| Havvanur Ezginci   | Developer      |                 |
+| Havva Nur Ezginci   | Developer      |                 |
 | Hüseyin Eraslan  | Developer      |                 |
 | Kuruluş Fidel Akyürek         | Developer      |                 |
 | Prodoost Fit               | Startup        |                 |
