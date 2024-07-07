@@ -77,8 +77,63 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   Şimdi bu kısımda uygulama ekran görüntüleri yer almalı.
   </details>
 
+  <details>
+  <summary><h3>Sprint 1 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
+  " ![Ekran görüntüsü 2024-07-05 112321](https://github.com/huseyineraslan/bootcamp18/assets/159646627/d5ec8d69-f598-4b54-88d3-7bd29e27c266)
+" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/11.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/12.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/13.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/14.png" style="max-width: 100%; height: auto;">
+    <img src="bootcampFiles/sprintOne/boardupdate/15.png" style="max-width: 100%; height: auto;">
+  </details>
   
 </details>
+
+  **Sprint Notları**:
+  - Proje yönetimi için 'Trello' kullanılmasına karar verilmiştir.
+
+  - Kullanıcı arayüzü tasarımları için `Figma` ve `Android Studio` kullanılmasına karar verilmiştir.
+
+    - **Bu sprint için beklenen toplam puan** : 200 points
+   
+    - **Puan Toplama Mantığı** : (200 puan toplandı)
+    - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+    - **Daily Scrum**:
+    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+   
+      
+    - **Sprint Review**
+         - Aldığımız ilk 3 toplantıda fikir aşamasını konuştuk ve karar kıldık.
+         - Uygulamanın temel olarak 4 ana hedefini belirledik bunlar : Egzersizler , Beslenme Sistemi , İstatisler , Kişisel Plan
+         - Sonraki toplantıda Görev dağılımı ve Rolleri belirledik.
+         - `Kemal ` ve `Hüseyin  ` fikir üzerinde nasıl bir uygulama olduğunu netleştirmek için Figma'dan taslak geliştirdi
+         - ` Havvanur`  geliştirilen taslak üzerine Andorid Studio üzerinden anasayfayı ve diğerlerini tasarladı .
+         - `Kurtuluş ` Uygulama için gerekli olan Görsellerin tasarımı yaptı ve tasarladı .
+         - `Güller  ` sınav haftasında olduğu için toplantılara katılabildi ve logo bulma işinde yardımcı oldu
+         - Uygulama ismini `Kemal ` bir jamboard açarak belirledik .
+         - Egzersizler bölümü için bütün edindiğimiz bilgiler birleştirildi kodlama kısmına ağırlıklı olarak `Hüseyin` ve `Havvanur  ` ilgilendi.
+         - İstatistikler bölümü için çalışmalara başlandı .
+         - ` Kemal` Scrum Master olarak trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+        
+     
+     - **Sprint Retrospective:**
+        - Genel olarak ana hedefimizin Uygulamayı sprint2 sonuna kadar bitirmek ve sprint3'de de Uygulamaya yenilik ekleme ve geliştirmeyi amaç edindik
+        - Giriş yapma ve Kayıt olma sayfasını ve kodlarını sprint2 için ayırdık
+        - Beslenme (AI destekli diyet asistanı)(kalori hesaplama) bölümünü tamamlayacağız
+        - Programlar sayfası (takvim ile kişi ne kadar spor yaptığını görebilecek) (haftalık programlama takvim) bölümünü tamamlayacağız
+        - İstatistikler sayfası (vücut endeksi) (kalori ihtiyacı)(bazal metabolizma) bölümüne kaldığımız yerden devam edeceğiz ve tamamlayacağız
+        - Logo için kesin bir karar vereceğiz
+        -  Bildirimler eklenecek ve Bir Sinyal kullanmayı düşünebiliriz.
+        -  Başvuru son tamamlanma aşamasına geldikçe birim testleri ve diğer test işlemleri yazılarak yürütülecektir.
+        -  Ayarlardaki düğmeler için tüm sayfalar tamamlanacaktır.
+      
+      
+
 
 
 
