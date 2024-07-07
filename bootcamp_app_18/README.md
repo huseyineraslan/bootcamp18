@@ -100,7 +100,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     - **Puan Toplama Mantığı** : (200 puan toplandı)
     - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
    
-    - **Daily Scrum**:
+    - **Daily Scrum**: https://bit.ly/45R6pEp ----
+                      https://bit.ly/3XZ64xz
     - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
    
       
