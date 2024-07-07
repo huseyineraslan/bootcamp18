@@ -32,10 +32,9 @@ class MyApp extends StatelessWidget {
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),
         textTheme: const TextTheme(
-          bodyMedium: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+            bodyMedium: TextStyle(
+          color: Colors.white,
+        )),
       ),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
