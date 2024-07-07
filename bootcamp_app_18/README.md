@@ -79,13 +79,18 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
   <details>
   <summary><h3>Sprint 1 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
-  " ![Ekran görüntüsü 2024-07-05 112321](https://github.com/huseyineraslan/bootcamp18/assets/159646627/d5ec8d69-f598-4b54-88d3-7bd29e27c266)
-" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/11.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/12.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/13.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/14.png" style="max-width: 100%; height: auto;">
-    <img src="bootcampFiles/sprintOne/boardupdate/15.png" style="max-width: 100%; height: auto;">
+    
+  ![Ekran görüntüsü 2024-07-05 112321](https://github.com/huseyineraslan/bootcamp18/assets/159646627/831ee1cc-10f4-4c8d-a5a1-e1900a84cdd7)
+
+  ![Ekran görüntüsü 2024-07-07 004344](https://github.com/huseyineraslan/bootcamp18/assets/159646627/92057be7-d6c9-4e39-9630-c16d3450cd36)
+
+  ![Ekran görüntüsü 2024-07-07 032113](https://github.com/huseyineraslan/bootcamp18/assets/159646627/d20b0fd5-1a1e-4e07-a502-f31050ebce85)
+
+![Ekran görüntüsü 2024-07-07 032041](https://github.com/huseyineraslan/bootcamp18/assets/159646627/ca19ce0e-0e07-4571-a3ce-28177093afa8)
+
+
+
+
   </details>
   
 </details>
