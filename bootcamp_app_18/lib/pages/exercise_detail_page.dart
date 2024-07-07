@@ -142,7 +142,7 @@ class ExerciseDetailPageState extends State<ExerciseDetailPage> {
 
   // lib/assets/images/exercise_detail/  =>dizinindeki egzersize ait resim path lerini al
   Future<List<String>> getExerciseImages(String exerciseName) async {
-    exerciseName = exerciseName.replaceAll(' ', '');
+    exerciseName = exerciseName.replaceAll(' ', '').toLowerCase();
 
     final manifestContent = await rootBundle.loadString('AssetManifest.json');
     final Map<String, dynamic> manifestMap = json.decode(manifestContent);
