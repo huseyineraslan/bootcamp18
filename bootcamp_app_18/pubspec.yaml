@@ -39,8 +39,8 @@ dependencies:
   shared_preferences: ^2.2.3
   hexcolor: ^3.0.1
   google_fonts: ^6.2.0
-  translator: ^1.0.0
   carousel_slider: ^4.2.1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:bootcamp_app_18/pages/exercises_page.dart';
-import 'package:bootcamp_app_18/service/wger_exercise_api_service.dart';
+import 'package:bootcamp_app_18/provider/exercise_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ExerciseCategoriesPage extends StatefulWidget {
   const ExerciseCategoriesPage({super.key});
@@ -10,17 +11,20 @@ class ExerciseCategoriesPage extends StatefulWidget {
 }
 
 class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
-  List categories = []; // exercises categories
   bool isLoading = true;
 
   @override
-  void initState() {
-    super.initState();
-    fetchCategories(); //kategoriler listesi alınır
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    fetchCategories();
   }
 
   @override
   Widget build(BuildContext context) {
+    // ExerciseProvider sağlayıcısına erişim sağlayarak _uniquePrimaryMuscles setine ulaşma
+    Set<String> uniquePrimaryMuscles =
+        Provider.of<ExerciseProvider>(context).uniquePrimaryMuscles;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Exercise Categories'),
@@ -28,12 +32,13 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
-              itemCount: categories.length,
+              itemCount: uniquePrimaryMuscles.length,
               itemBuilder: (context, index) {
-                String categoriName = categories[index]['name'];
+                String muscle =
+                    uniquePrimaryMuscles.elementAt(index).toUpperCase();
 
                 String imageName =
-                    'lib/assets/images/${categoriName.trim()}.jpg';
+                    'lib/assets/images/${muscle.replaceAll(' ', '')}.jpg';
 
                 return Card(
                   margin: const EdgeInsets.all(8.0),
@@ -44,23 +49,22 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ExercisesPage(
-                              categoryId: categories[index]['id']),
+                          builder: (context) =>
+                              ExercisesPage(categoryName: muscle.toLowerCase()),
                         ),
                       );
                     },
                     child: Container(
-                      height: 100, //card yüksekliği
+                      height: 130, //card yüksekliği
                       //card arka plan
                       decoration: BoxDecoration(
                         color: Colors.blueGrey, //arka plan rengini
                         image: DecorationImage(
                           image: AssetImage(imageName),
-                          fit: BoxFit.cover, //resim kutucuğu doldursun
+                          fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
-                            Colors.black.withOpacity(
-                                0.6), //yarı saydam bir siyah renk (%60 opaklık)
-                            BlendMode.dstATop, //renk efekti
+                            Colors.black.withOpacity(0.6),
+                            BlendMode.dstATop,
                           ),
                         ),
                         borderRadius: BorderRadius.circular(12),
@@ -72,10 +76,10 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              categories[index]['name'],
+                              muscle,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -92,9 +96,10 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
 
   void fetchCategories() async {
     try {
-      List fetchedCategories = await ExerciseApiService.fetchCategories();
+      // Egzersiz verilerini çek, listen: false parametresi, widget'ın yeniden çizilmesini önler.
+      await Provider.of<ExerciseProvider>(context, listen: false)
+          .fetchExercises();
       setState(() {
-        categories = fetchedCategories;
         isLoading = false;
       });
     } catch (e) {
@@ -102,4 +107,25 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
       print(e);
     }
   }
+
+//  Resimin varlığının kontrolü amaçlı yazılmış fonksiyon şuan lık koda entegre edilmemiştir.
+/*
+  // lib/assets/images/  => dizinindeki egzersize ait resim varmı
+  Future<bool> doesExerciseCategoryImageExist(String exerciseName) async {
+    try {
+      final manifestContent = await rootBundle.loadString('AssetManifest.json');
+      final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+
+      // manifestMap içinde exerciseName ile eşleşen bir anahtar var mı diye kontrol ediyoruz
+      final bool imageExists = manifestMap.keys.any(
+        (String key) => key.contains(exerciseName),
+      );
+
+      return imageExists;
+    } catch (e) {
+      // Hata durumunda false döndürüyoruz
+      return false;
+    }
+  }
+  */
 }
