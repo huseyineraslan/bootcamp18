@@ -6,6 +6,7 @@ import 'package:bootcamp_app_18/pages/notifications_page.dart';
 import 'package:bootcamp_app_18/pages/nutrition_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/programs_page.dart';
+import 'package:bootcamp_app_18/pages/register_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -74,10 +75,13 @@ class HomePageState extends State<HomePage> {
               icon: const Icon(Icons.person, size: 30),
               onPressed: () {
                 // Profil sayfasına yönlendirme
-                Navigator.push(
+                /*   Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const ProfilPage()));
+                        */
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RegisterPage()));
               },
             ),
           ],
