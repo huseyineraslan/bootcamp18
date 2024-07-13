@@ -1,12 +1,11 @@
-import 'dart:convert';
-
-import 'package:bootcamp_app_18/service/wger_exercise_api_service.dart';
+import 'package:bootcamp_app_18/models/exercise_model.dart';
+import 'package:bootcamp_app_18/provider/exercise_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class ExerciseDetailPage extends StatefulWidget {
-  final int exerciseId;
+  final String exerciseId;
   const ExerciseDetailPage({super.key, required this.exerciseId});
 
   @override
@@ -14,152 +13,140 @@ class ExerciseDetailPage extends StatefulWidget {
 }
 
 class ExerciseDetailPageState extends State<ExerciseDetailPage> {
-  Map exercise = {}; //exersiz detay map
-  bool isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    fetchExerciseDetails(); // seçilen egzersizin detay bilgilerini alma
-  }
-
   @override
   Widget build(BuildContext context) {
-    String steps = exercise['steps'] ?? "";
+    return Consumer<ExerciseProvider>(
+      builder: (context, exerciseProvider, _) {
+        Exercise? exercise =
+            exerciseProvider.getExerciseById(widget.exerciseId);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Exercise Details'),
-      ),
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //Egzersiz Name Text
-                  Text(
-                    exercise['name'],
-                    style: const TextStyle(
-                        fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  //egzersiz Image Carousel Slider
-                  FutureBuilder<List<String>>(
-                    future: getExerciseImages(exercise[
-                        'name']), //Egzersize ait resim path leri alınır
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Center(child: CircularProgressIndicator());
-                      } else if (snapshot.hasError) {
-                        return Center(child: Text('Hata: ${snapshot.error}'));
-                      } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                        return const Center(child: Text('Resim bulunamadı'));
-                      } else {
-                        //resim varsa carouser_slider oluştur.
-                        return CarouselSliderWidget(imagePaths: snapshot.data!);
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  // Egzersiz Adımları Text
-                  Text(
-                    steps,
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                  const SizedBox(height: 8),
+        if (exercise == null) {
+          return Scaffold(
+            appBar: AppBar(title: const Text('Exercise Details')),
+            body: const Center(child: Text('Exercise not found')),
+          );
+        }
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('Exercise Details'),
+          ),
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //Egzersiz Name Text
+                Text(
+                  exercise.name!.toUpperCase(),
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                //egzersiz Image Carousel Slider
+                CarouselSliderWidget(imagePaths: exercise.images!),
+                const SizedBox(height: 16),
+                // Egzersiz Adımları varsa
+                buildDetailList(
+                  'Egzersiz Adımları',
+                  exercise.instructions!,
+                  (item) => item,
+                ),
+                const SizedBox(height: 16),
 
-                  // egzersiz detay bilgisinde equipment varsa oluştur
-                  buildDetailList(
-                    'Gerekli Ekipman',
-                    exercise['equipment'],
-                    (equipment) => "- ${equipment["name"]}",
-                  ),
-                  const SizedBox(height: 16),
-                  // egzersiz detay bilgisinde muscles varsa oluştur
-                  buildDetailList(
-                    'Çalışan Kaslar - Muscles',
-                    exercise['muscles'],
-                    (muscle) => "- ${muscle["name"]} (${muscle["name_en"]})",
-                  ),
-                  const SizedBox(height: 16),
-                  // egzersiz detay bilgisinde muscles_secondary varsa yaz.
-                  buildDetailList(
-                    'Secondary Muscles',
-                    exercise['muscles_secondary'],
-                    (muscle) => "- ${muscle["name"]} (${muscle["name_en"]})",
-                  ),
-                ],
-              ),
+                Text(
+                  "Level : ${exercise.level ?? 'No level available'}",
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+
+                const SizedBox(height: 16),
+                // egzersiz detay bilgisinde Primary muscles varsa oluştur
+                buildDetailList(
+                  'Primary Muscles',
+                  exercise.primaryMuscles!,
+                  (muscle) => "- $muscle",
+                ),
+                const SizedBox(height: 16),
+                // egzersiz detay bilgisinde Secondary muscles varsa yaz.
+                buildDetailList(
+                  'Secondary Muscles',
+                  exercise.secondaryMuscles!,
+                  (muscle) => "- $muscle",
+                ),
+              ],
             ),
+          ),
+        );
+      },
     );
   }
+}
 
-  // seçilen egzersizin detay bilgilerini alma
-  fetchExerciseDetails() async {
-    try {
-      Map fetchedExercise =
-          await ExerciseApiService.fetchExerciseDetails(widget.exerciseId);
-      setState(() {
-        exercise = fetchedExercise;
-        isLoading = false;
-      });
-    } catch (e) {
-      // Handle error
-      print(e);
-    }
-  }
-
-/*
+/* detay bilgiisnde yer alan listelerin widgetını oluşturma
    buildDetailList : title, öğeler listesi ve her bir öğeyi nasıl 
    görüntüleyeceğinizi belirten bir itemBuilder fonksiyonu alır.
  */
-  Widget buildDetailList(
-      String title, List<dynamic> items, String Function(dynamic) itemBuilder) {
-    //liste boşsa boş alan döndür
-    if (items.isEmpty) return const SizedBox.shrink();
+Widget buildDetailList(
+    String title, List<dynamic> items, String Function(dynamic) itemBuilder) {
+  //liste boşsa boş alan döndür
+  if (items.isEmpty) return const SizedBox.shrink();
 
-    return Column(
-      // title ve listeyi column içine yerleştirme
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Liste Title Text
-        Text(
-          title,
-          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+  // Egzersiz talimatları için numaralandırma işlemini kontrol etmek için flag
+  bool isInstructionsList =
+      (title == 'Egzersiz Adımları' && items is List<String>);
+
+  return Column(
+    // title ve listeyi column içine yerleştirme
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      // Liste Title Text
+      Text(
+        title,
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+      // Egzersiz talimatları için numaralandırma
+      if (isInstructionsList)
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: items.asMap().entries.map((entry) {
+            int index = entry.key + 1;
+            String instruction = entry.value;
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '$index.',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      instruction,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
         ),
-        const SizedBox(height: 8),
-        ...items.map((item) {
-          return Text(
-            itemBuilder(item),
-            style: const TextStyle(fontSize: 16),
-          );
-        }),
-      ],
-    );
-  }
 
-  // lib/assets/images/exercise_detail/  =>dizinindeki egzersize ait resim path lerini al
-  Future<List<String>> getExerciseImages(String exerciseName) async {
-    exerciseName = exerciseName.replaceAll(' ', '').toLowerCase();
-
-    final manifestContent = await rootBundle.loadString('AssetManifest.json');
-    final Map<String, dynamic> manifestMap = json.decode(manifestContent);
-
-    // Belirtilen egzersiz adına sahip olan resimleri filtrele
-    final imagePaths = manifestMap.keys.where((String key) {
-      // Dosya adının egzersiz adı ile başlaması ve numaralandırılmış olması gerekiyor
-      return key.contains('lib/assets/images/exercise_detail/$exerciseName') &&
-          RegExp(r'lib/assets/images/exercise_detail/' +
-                  exerciseName +
-                  r'\d+\.jpg')
-              .hasMatch(key);
-    }).toList();
-
-    // Görüntü yollarını döndür
-    return imagePaths;
-  }
+      // Diğer listeler için genel map işlemi
+      ...(!isInstructionsList
+          ? items.map((item) {
+              return Text(
+                itemBuilder(item),
+                style: const TextStyle(fontSize: 16),
+              );
+            }).toList()
+          : []),
+      const SizedBox(width: 8),
+    ],
+  );
 }
 
 //CarouselSlider oluştur. CarouselSlider resimleri kaydırılabilir bir şekilde gösterir.
@@ -188,6 +175,7 @@ class CarouselSliderWidget extends StatelessWidget {
       ),
       items: imagePaths.map((imagePath) {
         //listedeki her bir dosya yolu için bir Widget oluşturur.
+
         return Builder(
           builder: (BuildContext context) {
             return Container(
@@ -197,8 +185,27 @@ class CarouselSliderWidget extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 238, 218, 157),
               ),
-              child: Image.asset(imagePath,
-                  fit: BoxFit.cover), //resmin konteyneri tamamen kaplasın
+              child: Image.network(
+                'https://github.com/havva-nur-ezginci/free-exercise-db_tr/blob/main/exercises/$imagePath?raw=true',
+                //Görsel URL'sindeki ?raw=true parametresi, GitHub'dan doğrudan dosyayı almanıza yardımcı olur.
+                loadingBuilder: (BuildContext context, Widget child,
+                    ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return Center(
+                    child: CircularProgressIndicator(
+                      value: loadingProgress.expectedTotalBytes != null
+                          ? loadingProgress.cumulativeBytesLoaded /
+                              loadingProgress.expectedTotalBytes!
+                          : null,
+                    ),
+                  );
+                },
+                errorBuilder: (BuildContext context, Object exception,
+                    StackTrace? stackTrace) {
+                  return Text('Görsel yüklenirken bir hata oluştu: $exception');
+                },
+                fit: BoxFit.cover,
+              ), // resmin konteyneri tamamen kaplasın
             );
           },
         );

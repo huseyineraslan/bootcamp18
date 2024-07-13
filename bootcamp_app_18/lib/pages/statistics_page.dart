@@ -10,9 +10,10 @@ class StatisticsPage extends StatelessWidget {
         title: const Text('İstatistikler'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("lib/assets/images/exercise_detail/background.jpeg"),
+            image:
+                AssetImage("lib/assets/images/exercise_detail/background.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -48,7 +49,8 @@ class BMIWidgetState extends State<BMIWidget> {
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               labelText: 'Boy (metre cinsinden)',
-              labelStyle: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+              labelStyle: TextStyle(
+                  color: Colors.blueGrey, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 20.0),
@@ -57,7 +59,8 @@ class BMIWidgetState extends State<BMIWidget> {
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               labelText: 'Kilo (kg cinsinden)',
-              labelStyle: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+              labelStyle: TextStyle(
+                  color: Colors.blueGrey, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 20.0),
@@ -67,11 +70,13 @@ class BMIWidgetState extends State<BMIWidget> {
             },
             icon: const Icon(Icons.calculate, color: Colors.white),
             label: const Text('BMI Hesapla',
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)), // Bold stil eklendi
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)), // Bold stil eklendi
             style: TextButton.styleFrom(
               backgroundColor: Colors.blueGrey,
               padding:
-              const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -80,9 +85,12 @@ class BMIWidgetState extends State<BMIWidget> {
           const SizedBox(height: 20.0),
           _bmiResult != null
               ? Text(
-            'BMI: ${_bmiResult!.toStringAsFixed(2)}',
-            style: const TextStyle(fontSize: 30.0, color: Colors.green, fontWeight: FontWeight.bold), // Bold stil eklendi
-          )
+                  'BMI: ${_bmiResult!.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                      fontSize: 30.0,
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold), // Bold stil eklendi
+                )
               : Container(),
         ],
       ),

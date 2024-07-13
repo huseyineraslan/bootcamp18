@@ -1,4 +1,4 @@
-const String backgroundColor = "#252525";
+const String backgroundColor = "#0d1117";
 //sarı :fbda03
 //mat açık siyah:252525   - koyu siyah: 010101
 // lacivert : 00133D
