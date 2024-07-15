@@ -15,12 +15,12 @@ class AppProvider extends ChangeNotifier {
     try {
       _exercises = await _exerciseService.fetchExercises();
 
-      exercises.forEach((exercise) {
+      for (var exercise in exercises) {
         if (exercise.primaryMuscles != null &&
             exercise.primaryMuscles!.isNotEmpty) {
           _uniquePrimaryMuscles.addAll(exercise.primaryMuscles!);
         }
-      });
+      }
 
       notifyListeners(); // // Notify listeners of changes
     } catch (e) {

@@ -1,11 +1,13 @@
 import 'dart:core';
-import 'package:bootcamp_app_18/constants/theme_manager.dart';
-import 'package:bootcamp_app_18/firebase_options.dart';
-import 'package:bootcamp_app_18/pages/home_page.dart';
-import 'package:bootcamp_app_18/provider/app_provider.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
+import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
+import 'package:bootcamp_app_18/pages/notifications_page.dart';
+import 'package:bootcamp_app_18/pages/nutrition_page.dart';
+import 'package:bootcamp_app_18/pages/profil_page.dart';
+import 'package:bootcamp_app_18/pages/programs_page.dart';
+import 'package:bootcamp_app_18/pages/statistics_page.dart';
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   final bool isDarkTheme;
@@ -57,14 +59,6 @@ class HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight),
         child: AppBar(
-          // Logo denemesi
-          /*   leading: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              radius: 20.0,
-              backgroundImage: AssetImage('lib/assets/images/logo.png'),
-            ),
-          ),*/
           title: Text(
             'Enerjinizi yükseltin,\nsağlığınızı koruyun!',
             style: Theme.of(context).textTheme.bodyLarge,
@@ -90,12 +84,14 @@ class HomePageState extends State<HomePage> {
             //Profil
             IconButton(
               icon: const Icon(Icons.person),
-
               onPressed: () {
                 // Profil sayfasına yönlendirme
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilPage()));
+                /* Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()));*/
               },
             ),
           ],

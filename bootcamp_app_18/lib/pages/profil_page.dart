@@ -4,7 +4,7 @@ import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfilPage extends StatefulWidget {
-  const ProfilPage({Key? key}) : super(key: key);
+  const ProfilPage({super.key});
 
   @override
   State<ProfilPage> createState() => _ProfilPageState();
@@ -49,7 +49,7 @@ class _ProfilPageState extends State<ProfilPage> {
   }
 
   void _startStepCounter() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _stepCount++; // Adım sayısı her saniye bir artıyor
       });
@@ -64,7 +64,7 @@ class _ProfilPageState extends State<ProfilPage> {
 
   void _validateWeightAndHeight() async {
     // Simüle edilmiş boy ve kilo doğrulama
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     setState(() {
       _isValid =
           true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
@@ -82,7 +82,7 @@ class _ProfilPageState extends State<ProfilPage> {
     });
     // Bildirim gösterebilirsiniz
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('Profil bilgileri kaydedildi.'),
         duration: Duration(seconds: 2),
       ),
@@ -107,7 +107,7 @@ class _ProfilPageState extends State<ProfilPage> {
         ),
       ])),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.green, Colors.white70],
             begin: Alignment.topLeft,
@@ -130,7 +130,7 @@ class _ProfilPageState extends State<ProfilPage> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Center(
+                      const Center(
                         child: CircleAvatar(
                           radius: 60,
                           backgroundImage:
@@ -156,7 +156,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Boy',
                       style: TextStyle(
                           fontSize: 18.0,
@@ -167,7 +167,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       controller: _heightController,
                       focusNode: _focusNode,
                       maxLength: 3,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Boy (cm)',
                         border: OutlineInputBorder(),
                       ),
@@ -175,7 +175,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       enabled: !_isSaved,
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    const Text(
                       'Kilo',
                       style: TextStyle(
                           fontSize: 18.0,
@@ -186,7 +186,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       controller: _weightController,
                       focusNode: _focusNode,
                       maxLength: 3,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Kilo (kg)',
                         border: OutlineInputBorder(),
                       ),
@@ -194,7 +194,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       enabled: !_isSaved,
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    const Text(
                       'Adım Sayar',
                       style: TextStyle(
                           fontSize: 18.0,
@@ -205,14 +205,14 @@ class _ProfilPageState extends State<ProfilPage> {
                       controller: _stepCountController,
                       maxLength: 5,
                       readOnly: true, // Kullanıcı girişi engellendi
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Adım Sayar',
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    const Text(
                       'Yaş',
                       style: TextStyle(
                           fontSize: 18.0,
@@ -223,7 +223,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       controller: _ageController,
                       focusNode: _focusNode,
                       maxLength: 3,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Yaş',
                         border: OutlineInputBorder(),
                       ),
@@ -231,7 +231,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       enabled: !_isSaved,
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    const Text(
                       'Cinsiyet',
                       style: TextStyle(
                           fontSize: 18.0,
@@ -253,7 +253,7 @@ class _ProfilPageState extends State<ProfilPage> {
                               });
                             }
                           : null,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Cinsiyet',
                       ),
@@ -267,7 +267,7 @@ class _ProfilPageState extends State<ProfilPage> {
                         border: Border.all(color: Colors.grey),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Column(
+                      child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -277,7 +277,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
                           ),
-                          const SizedBox(height: 8),
+                          SizedBox(height: 8),
                           Text(
                             'Buraya durumunuz yazılacak.',
                             style:
@@ -289,7 +289,7 @@ class _ProfilPageState extends State<ProfilPage> {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: !_isSaved ? _saveProfileInformation : null,
-                      child: Text('Bilgileri Kaydet'),
+                      child: const Text('Bilgileri Kaydet'),
                     ),
                   ],
                 ),
