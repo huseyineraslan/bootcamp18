@@ -1,6 +1,6 @@
 import 'package:bootcamp_app_18/models/exercise_model.dart';
 import 'package:bootcamp_app_18/pages/exercise_detail_page.dart';
-import 'package:bootcamp_app_18/provider/exercise_provider.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +20,7 @@ class ExercisesPageState extends State<ExercisesPage> {
         title: const Text('Exercises'),
       ),
       // ExerciseProvider sağlayıcısından egzersizleri almak için Consumer kullanalım
-      body: Consumer<ExerciseProvider>(
+      body: Consumer<AppProvider>(
         builder: (context, exerciseProvider, _) {
           // ExerciseProvider'dan kategoriye göre egzersizleri al
 
@@ -34,8 +34,10 @@ class ExercisesPageState extends State<ExercisesPage> {
                   itemBuilder: (context, index) {
                     //egzersiz listesi oluşturma
                     return ListTile(
-                      title: Text(exercises[index].name!,
-                          style: const TextStyle(color: Colors.white)),
+                      title: Text(
+                        exercises[index].name!,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                       onTap: () {
                         // ilgili egzersize ait detay sayfasına yönlendirme
                         Navigator.push(

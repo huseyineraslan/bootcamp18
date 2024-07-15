@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1068073694700",
+    "project_id": "proodos-fit",
+    "storage_bucket": "proodos-fit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068073694700:android:549ddd73f28a2ba6c2fcc9",
+        "android_client_info": {
+          "package_name": "com.example.bootcamp_app_18"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068073694700-s6tqut657l4414bldpulklse1326ou50.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bootcamp_app_18",
+            "certificate_hash": "d10d0f9b4fb4491810132d3f864bd47d494aad61"
+          }
+        },
+        {
+          "client_id": "1068073694700-m8sp1uvrifu9dfncp1qqg2u99u9stme5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5Ux96USrubv-9R5YREFcVMnxrrL-z0QY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068073694700-m8sp1uvrifu9dfncp1qqg2u99u9stme5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1068073694700-55j46tqujfqcubhc909trtqbca1d9sf8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bootcampApp18"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

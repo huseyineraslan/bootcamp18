@@ -1,3 +1,5 @@
+import 'package:bootcamp_app_18/pages/login_page.dart';
+import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:bootcamp_app_18/service/phone_validation_service.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,7 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
+  final AuthService _firebaseService = AuthService();
   final _phoneNumberController = TextEditingController();
 
   //Phone number will be checked with _focusNode when writing is finished
@@ -78,8 +81,19 @@ class _ProfilPageState extends State<ProfilPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profil'),
-      ),
+          title:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Text('Profil', style: Theme.of(context).textTheme.displayLarge),
+        IconButton(
+          icon: const Icon(Icons.logout),
+          onPressed: () {
+            _firebaseService.signOut();
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+        ),
+      ])),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

@@ -1,5 +1,5 @@
 import 'package:bootcamp_app_18/pages/exercises_page.dart';
-import 'package:bootcamp_app_18/provider/exercise_provider.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
   Widget build(BuildContext context) {
     // ExerciseProvider sağlayıcısına erişim sağlayarak _uniquePrimaryMuscles setine ulaşma
     Set<String> uniquePrimaryMuscles =
-        Provider.of<ExerciseProvider>(context).uniquePrimaryMuscles;
+        Provider.of<AppProvider>(context).uniquePrimaryMuscles;
 
     return Scaffold(
       appBar: AppBar(
@@ -38,7 +38,7 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
                     uniquePrimaryMuscles.elementAt(index).toUpperCase();
 
                 String imageName =
-                    'lib/assets/images/${muscle.replaceAll(' ', '')}.jpg';
+                    'lib/assets/images/exercise_detail/${muscle.replaceAll(' ', '')}.jpg';
 
                 return Card(
                   margin: const EdgeInsets.all(8.0),
@@ -97,8 +97,7 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
   void fetchCategories() async {
     try {
       // Egzersiz verilerini çek, listen: false parametresi, widget'ın yeniden çizilmesini önler.
-      await Provider.of<ExerciseProvider>(context, listen: false)
-          .fetchExercises();
+      await Provider.of<AppProvider>(context, listen: false).fetchExercises();
       setState(() {
         isLoading = false;
       });
@@ -107,25 +106,4 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
       print(e);
     }
   }
-
-//  Resimin varlığının kontrolü amaçlı yazılmış fonksiyon şuan lık koda entegre edilmemiştir.
-/*
-  // lib/assets/images/  => dizinindeki egzersize ait resim varmı
-  Future<bool> doesExerciseCategoryImageExist(String exerciseName) async {
-    try {
-      final manifestContent = await rootBundle.loadString('AssetManifest.json');
-      final Map<String, dynamic> manifestMap = json.decode(manifestContent);
-
-      // manifestMap içinde exerciseName ile eşleşen bir anahtar var mı diye kontrol ediyoruz
-      final bool imageExists = manifestMap.keys.any(
-        (String key) => key.contains(exerciseName),
-      );
-
-      return imageExists;
-    } catch (e) {
-      // Hata durumunda false döndürüyoruz
-      return false;
-    }
-  }
-  */
 }
