@@ -1,4 +1,5 @@
-import 'dart:core';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bootcamp_app_18/constants/color.dart';
 import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
 import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
@@ -8,7 +9,6 @@ import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/programs_page.dart';
 import 'package:bootcamp_app_18/pages/register_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
-import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class HomePage extends StatefulWidget {
@@ -72,16 +72,11 @@ class HomePageState extends State<HomePage> {
             ),
             //Profil
             IconButton(
-              icon: const Icon(Icons.person, size: 30),
+              icon: const Icon(Icons.person_2, size: 30),
               onPressed: () {
                 // Profil sayfasına yönlendirme
-                /*   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfilPage()));
-                        */
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => RegisterPage()));
+                    MaterialPageRoute(builder: (context) => const ProfilPage()));
               },
             ),
           ],
@@ -163,14 +158,14 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-// Sonraki motivasyon alıntısına geçmek için mevcut alıntı günceller
+  // Sonraki motivasyon alıntısına geçmek için mevcut alıntı günceller
   void _nextQuote() {
     setState(() {
       _currentIndex = (_currentIndex + 1) % _quotesLength;
     });
   }
 
-// Her bir motivasyon alıntısı için bir daire göstergesi oluşturur
+  // Her bir motivasyon alıntısı için bir daire göstergesi oluşturur
   List<Widget> _buildDotIndicator() {
     List<Widget> indicators = [];
     for (int i = 0; i < _quotesLength; i++) {
@@ -187,7 +182,7 @@ class HomePageState extends State<HomePage> {
     return indicators;
   }
 
-//grid -alt bölümdeki öğeyi oluşturma metodu
+  // Grid alt bölümdeki öğeyi oluşturma metodu
   Widget _buildGridTile(String title, IconData icon, BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -235,7 +230,7 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-//grid bölümdeki öğelerrin boyutunu hesaplama - ekrana sığması hedeflenmiştir.
+  // Grid bölümündeki öğelerin boyutunu hesaplama - ekrana sığması hedeflenmiştir.
   void calculateAspectRatio() {
     double availableHeight = MediaQuery.of(context).size.height -
         appBarHeight -
