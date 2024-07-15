@@ -1,5 +1,5 @@
 import 'package:bootcamp_app_18/models/exercise_model.dart';
-import 'package:bootcamp_app_18/provider/exercise_provider.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,20 +15,20 @@ class ExerciseDetailPage extends StatefulWidget {
 class ExerciseDetailPageState extends State<ExerciseDetailPage> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<ExerciseProvider>(
+    return Consumer<AppProvider>(
       builder: (context, exerciseProvider, _) {
         Exercise? exercise =
             exerciseProvider.getExerciseById(widget.exerciseId);
 
         if (exercise == null) {
           return Scaffold(
-            appBar: AppBar(title: const Text('Exercise Details')),
+            appBar: AppBar(title: const Text('Egzersiz Detayları')),
             body: const Center(child: Text('Exercise not found')),
           );
         }
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Exercise Details'),
+            title: const Text('Egzersiz Detayları'),
           ),
           body: SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
@@ -36,11 +36,8 @@ class ExerciseDetailPageState extends State<ExerciseDetailPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Egzersiz Name Text
-                Text(
-                  exercise.name!.toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.bold),
-                ),
+                Text(exercise.name!.toUpperCase(),
+                    style: Theme.of(context).textTheme.bodyLarge),
                 const SizedBox(height: 8),
                 //egzersiz Image Carousel Slider
                 CarouselSliderWidget(imagePaths: exercise.images!),

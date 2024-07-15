@@ -1,23 +1,21 @@
-import 'package:bootcamp_app_18/pages/login_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
+import 'package:bootcamp_app_18/pages/register_page.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   final AuthService _firebaseService = AuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool _isLoading = false;
@@ -27,8 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.secondary,
-        title:
-            Text("Register", style: Theme.of(context).textTheme.displayLarge),
+        title: Text("Login", style: Theme.of(context).textTheme.displayLarge),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -70,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 children: [
                   Text(
-                    'Yeni̇ Hesap Oluştur',
+                    'Hesabınıza Giriş Yapın',
                     style: Theme.of(context).textTheme.displayLarge,
                   ),
                   const SizedBox(height: 12),
@@ -84,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         child: IconButton(
                           icon: const FaIcon(FontAwesomeIcons.google),
-                          onPressed: _registerWithGoogle,
+                          onPressed: loginWithGoogle,
                         ),
                       ),
                     ],
@@ -95,18 +92,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   Form(
                       key: _formKey,
                       child: Column(children: <Widget>[
-                        TextFormField(
-                          controller: _nameController,
-                          cursorColor: Theme.of(context).colorScheme.secondary,
-                          validator: (value) =>
-                              value!.isEmpty ? "Enter an name" : null,
-                          decoration: InputDecoration(
-                            hintText: "Name",
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _emailController,
@@ -141,7 +126,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   _isLoading
                       ? const CircularProgressIndicator()
                       : ElevatedButton(
-                          onPressed: _register,
+                          onPressed: _login,
                           style: ElevatedButton.styleFrom(
                             backgroundColor:
                                 Theme.of(context).colorScheme.secondary,
@@ -151,7 +136,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 16),
-                            child: Text('Kayıt Ol',
+                            child: Text('Giriş Yap',
                                 style: Theme.of(context).textTheme.bodyMedium),
                           ),
                         ),
@@ -161,10 +146,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginPage()));
+                              builder: (context) => const RegisterPage()));
                     },
-                    child: Text(
-                        'Zaten bir hesabınız var mı? Buradan giriş yapın',
+                    child: Text('Hesabınız yok mu? Buradan kayıt olun',
                         style: Theme.of(context).textTheme.bodySmall),
                   ),
                 ],
@@ -176,18 +160,18 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void _registerWithGoogle() async {
+  void loginWithGoogle() async {
     User? user = await _firebaseService.signInWithGoogle();
     if (user != null) {
       print('Signed in: ${user.displayName}');
-      successRegister();
+      successLogin();
     } else {
       showDialogWarning();
       print('Sign in failed');
     }
   }
 
-  Future<void> _register() async {
+  Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
@@ -195,10 +179,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
       String email = _emailController.text.trim();
       String password = _passwordController.text.trim();
-      //  String name = _nameController.text.trim();
 
       User? user =
-          await _firebaseService.registerWithEmailAndPassword(email, password);
+          await _firebaseService.signInWithEmailAndPassword(email, password);
 
       if (mounted) {
         setState(() {
@@ -206,8 +189,8 @@ class _RegisterPageState extends State<RegisterPage> {
         });
 
         if (user != null) {
-          // Kayıt başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
-          successRegister();
+          // Giriş başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
+          successLogin();
         } else {
           // Kayıt başarısız
           showDialogWarning();
@@ -216,16 +199,16 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
-  void successRegister() {
+  void successLogin() {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
-        return const ProfilPage(); //burası ileride profil page olarak değiştirilecek
+        return const ProfilPage();
       },
     ));
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('Kayıt Başarılı'),
+        content: Text('Giriş Başarılı'),
         duration: Duration(seconds: 2),
       ),
     );
@@ -235,8 +218,8 @@ class _RegisterPageState extends State<RegisterPage> {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Registration Failed'),
-        content: const Text('Failed to register. Please try again.'),
+        title: const Text('Login failed'),
+        content: const Text('Failed to login. Please try again.'),
         actions: [
           TextButton(
             onPressed: () {

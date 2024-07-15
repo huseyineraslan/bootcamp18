@@ -1,267 +1,149 @@
-import 'dart:async';
+import 'package:bootcamp_app_18/pages/login_page.dart';
+import 'package:bootcamp_app_18/service/firebase_auth.dart';
+import 'package:bootcamp_app_18/service/phone_validation_service.dart';
 import 'package:flutter/material.dart';
 
 class ProfilPage extends StatefulWidget {
-  const ProfilPage({Key? key}) : super(key: key);
+  const ProfilPage({super.key});
 
   @override
   State<ProfilPage> createState() => _ProfilPageState();
 }
 
 class _ProfilPageState extends State<ProfilPage> {
-  final _weightController = TextEditingController();
-  final _heightController = TextEditingController();
-  final _stepCountController = TextEditingController();
-  final _ageController = TextEditingController();
+  final AuthService _firebaseService = AuthService();
+  final _phoneNumberController = TextEditingController();
+
+  //Phone number will be checked with _focusNode when writing is finished
   final _focusNode = FocusNode();
-  String? _selectedGender;
   bool? _isValid;
   String? _errorMessage;
   String? _country;
   String? _location;
   String? _locInfo;
-  String _name = 'hüseyin eraslan'; // Örnek koydum
-  bool _isSaved = false;
-  int _stepCount = 0;
-  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
     _focusNode.addListener(_onFocusChange);
-    _startStepCounter(); // Adım sayar otomatik başlatılıyor
   }
 
   @override
   void dispose() {
     _focusNode.removeListener(_onFocusChange);
-    _weightController.dispose();
-    _heightController.dispose();
-    _stepCountController.dispose();
-    _ageController.dispose();
+    _phoneNumberController.dispose();
     _focusNode.dispose();
-    _timer.cancel(); // Timer'i iptal et
     super.dispose();
   }
 
-  void _startStepCounter() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        _stepCount++; // Adım sayısı her saniye bir artıyor
-      });
-    });
-  }
-
+// Telefon numarası değiştiğinde _validatePhoneNumber ı çağır
   void _onFocusChange() {
     if (!_focusNode.hasFocus) {
-      _validateWeightAndHeight();
+      _validatePhoneNumber();
     }
   }
 
-  void _validateWeightAndHeight() async {
-    // Simüle edilmiş boy ve kilo doğrulama
-    await Future.delayed(Duration(seconds: 1));
-    setState(() {
-      _isValid = true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
-      _country = 'Turkey';
-      _location = 'Istanbul';
-      _locInfo = 'Country: $_country, Location: $_location';
-      _errorMessage = null;
-    });
-  }
+  void _validatePhoneNumber() async {
+    if (!mounted) return; // Widget dispose edildiyse işlem yapma
 
-  void _saveProfileInformation() {
-    // Burada profil bilgilerini kaydedebilirsiniz
-    setState(() {
-      _isSaved = true;
-    });
-    // Bildirim gösterebilirsiniz
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Profil bilgileri kaydedildi.'),
-        duration: Duration(seconds: 2),
-      ),
-    );
+    final service = PhoneValidationService();
+    final phoneNumber = _phoneNumberController.text;
+
+    try {
+      final result = await service.validatePhoneNumber(phoneNumber);
+      if (!mounted) return; // Widget dispose edildiyse işlem yapma
+
+      //başarılı bir response gelirse bilgileri güncelle
+      setState(() {
+        _isValid = result['is_valid'];
+        _country = result['country'];
+        _location = result['location'];
+        _locInfo = (_country != _location)
+            ? 'Country: $_country, Location: $_location'
+            : 'Country: $_country';
+
+        _errorMessage = null;
+      });
+    } catch (e) {
+      //Başarısız response
+      if (!mounted) return; // Widget dispose edildiyse işlem yapma
+      setState(() {
+        _isValid = null;
+        _country = null;
+        _location = null;
+        _locInfo = null;
+        _errorMessage = 'Failed to validate phone number: $e';
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Profil',
-          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.black),
+          title:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Text('Profil', style: Theme.of(context).textTheme.displayLarge),
+        IconButton(
+          icon: const Icon(Icons.logout),
+          onPressed: () {
+            _firebaseService.signOut();
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
         ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.green, Colors.white70],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Container(
-                  color: Colors.grey[300],
-                  child: Stack(
-                    children: [
-                      Positioned.fill(
-                        child: Image.asset(
-                          'lib/assets/images/profile_16_9backimage.jpg', // Burada yolu değiştirin
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Center(
-                        child: CircleAvatar(
-                          radius: 60,
-                          backgroundImage: AssetImage('lib/assets/images/profile_pic.jpg'),
-                          backgroundColor: Colors.transparent,
-                          child: ClipOval(
-                            child: Image(
-                              image: AssetImage('lib/assets/images/profile_pic.jpg'),
-                              fit: BoxFit.cover,
-                              width: 120,
-                              height: 120,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+      ])),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+//----------------------------
+            //Bu kısma farklı profil bilgi girş kısımları eklenecek
+//----------------------------
+
+/*
+Dünya genelinde kullanılan telefon 
+numaralarının maksimum uzunluğu genellikle 15 hane olarak kabul edilir.
+Bu standart, Uluslararası Telekomünikasyon Birliği (ITU) tarafından belirlenen 
+E.164 numaralandırma planına dayanmaktadır. E.164 formatında bir telefon numarası, 
+ülke kodu da dahil olmak üzere maksimum 15 basamaktan oluşabilir.
+*/
+            //Geçerli Telefon Numarası kontrolü
+            Row(
+              children: [
+                // Phone number text
+                Expanded(
+                  child: TextField(
+                    controller: _phoneNumberController,
+                    focusNode: _focusNode,
+                    maxLength: 15,
+                    decoration: const InputDecoration(
+                      labelText: 'Phone Number (+X0564XXXXXXX)',
+                      labelStyle: TextStyle(color: Colors.white),
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.phone,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Boy',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _heightController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: InputDecoration(
-                        labelText: 'Boy (cm)',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'Kilo',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _weightController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: InputDecoration(
-                        labelText: 'Kilo (kg)',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'Adım Sayar',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _stepCountController,
-                      maxLength: 5,
-                      readOnly: true, // Kullanıcı girişi engellendi
-                      decoration: InputDecoration(
-                        labelText: 'Adım Sayar',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'Yaş',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _ageController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: InputDecoration(
-                        labelText: 'Yaş',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'Cinsiyet',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    DropdownButtonFormField<String>(
-                      value: _selectedGender,
-                      items: ['Erkek', 'Kadın', 'Diğer'].map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: !_isSaved
-                          ? (newValue) {
-                        setState(() {
-                          _selectedGender = newValue;
-                        });
-                      }
-                          : null,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Cinsiyet',
-                      ),
-                      disabledHint: Text(_selectedGender ?? 'Seçilmedi'),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(12.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Durumunuz',
-                            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            'Buraya durumunuz yazılacak.',
-                            style: TextStyle(fontSize: 14.0, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: !_isSaved ? _saveProfileInformation : null,
-                      child: Text('Bilgileri Kaydet'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+                const SizedBox(width: 8),
+                if (_isValid != null)
+                  _isValid!
+                      ? const Icon(Icons.check_circle,
+                          color: Colors.green) //valid number icon
+                      : const Icon(Icons.cancel,
+                          color: Colors.red), //invalid number icon
+              ],
+            ),
+            const SizedBox(height: 8),
+            if (_errorMessage != null) //Geçersiz telefon numarası
+              Text(_errorMessage!, style: const TextStyle(color: Colors.red)),
+            if (_isValid != null &&
+                _isValid! &&
+                _locInfo != null) //Geçerli phone number
+              Text(_locInfo!, style: const TextStyle(fontSize: 12)),
+          ],
         ),
       ),
     );

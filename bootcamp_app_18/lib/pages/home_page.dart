@@ -1,18 +1,21 @@
+import 'dart:core';
+import 'package:bootcamp_app_18/constants/theme_manager.dart';
+import 'package:bootcamp_app_18/firebase_options.dart';
+import 'package:bootcamp_app_18/pages/home_page.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:bootcamp_app_18/constants/color.dart';
-import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
-import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
-import 'package:bootcamp_app_18/pages/notifications_page.dart';
-import 'package:bootcamp_app_18/pages/nutrition_page.dart';
-import 'package:bootcamp_app_18/pages/profil_page.dart';
-import 'package:bootcamp_app_18/pages/programs_page.dart';
-import 'package:bootcamp_app_18/pages/register_page.dart';
-import 'package:bootcamp_app_18/pages/statistics_page.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final bool isDarkTheme;
+  final VoidCallback toggleTheme;
+
+  const HomePage({
+    super.key,
+    required this.isDarkTheme,
+    required this.toggleTheme,
+  });
 
   @override
   HomePageState createState() => HomePageState();
@@ -54,14 +57,28 @@ class HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight),
         child: AppBar(
-          title: const Text(
+          // Logo denemesi
+          /*   leading: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              radius: 20.0,
+              backgroundImage: AssetImage('lib/assets/images/logo.png'),
+            ),
+          ),*/
+          title: Text(
             'Enerjinizi yükseltin,\nsağlığınızı koruyun!',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           actions: [
+            IconButton(
+              icon: Icon(
+                widget.isDarkTheme ? Icons.wb_sunny : Icons.nights_stay,
+              ),
+              onPressed: widget.toggleTheme,
+            ),
             //bildirimler
             IconButton(
-              icon: const Icon(Icons.notifications, size: 30),
+              icon: const Icon(Icons.notifications),
               onPressed: () {
                 // Bildirim sayfasına yönlendirme
                 Navigator.push(
@@ -72,11 +89,13 @@ class HomePageState extends State<HomePage> {
             ),
             //Profil
             IconButton(
-              icon: const Icon(Icons.person_2, size: 30),
+              icon: const Icon(Icons.person),
+
               onPressed: () {
                 // Profil sayfasına yönlendirme
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ProfilPage()));
+                    MaterialPageRoute(builder: (context) => const LoginPage()));
+
               },
             ),
           ],
@@ -175,7 +194,7 @@ class HomePageState extends State<HomePage> {
         margin: const EdgeInsets.symmetric(horizontal: 4),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: _currentIndex == i ? Colors.blue : Colors.grey,
+          color: _currentIndex == i ? Colors.deepOrange : Colors.grey,
         ),
       ));
     }
@@ -212,17 +231,23 @@ class HomePageState extends State<HomePage> {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: HexColor(cardBackgroundColor),
+          gradient: LinearGradient(
+            colors: [Theme.of(context).colorScheme.secondary, Colors.red],
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: Colors.black),
+            Icon(
+              icon,
+              size: 50,
+              color: Colors.black54,
+            ),
             const SizedBox(height: 10),
             Text(
               title,
-              style: const TextStyle(color: Colors.black, fontSize: 18),
+              style: const TextStyle(fontSize: 18, color: Colors.black),
             ),
           ],
         ),

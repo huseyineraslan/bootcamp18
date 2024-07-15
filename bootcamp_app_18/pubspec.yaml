@@ -34,18 +34,24 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  http: ^1.2.0
-  shared_preferences: ^2.2.3
-  hexcolor: ^3.0.1
-  google_fonts: ^6.2.0
-  carousel_slider: ^4.2.1
-  provider: ^6.1.2
-  font_awesome_flutter: ^10.7.0
+  cupertino_icons: 
+  http: 
+  shared_preferences:
+  google_fonts: 
+  carousel_slider:
+  provider:
+  font_awesome_flutter: 
+  flutter_native_splash: 
+  firebase_core: 
+  firebase_auth:
+  google_sign_in:
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+ 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -97,3 +103,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_native_splash:
+  color: "#000000" 
+  image: lib/assets/images/logo.png 
+  android: true  
+  ios: true 
+  web: true  
