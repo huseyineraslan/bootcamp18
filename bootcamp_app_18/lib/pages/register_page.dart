@@ -47,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
               icon: FaIcon(FontAwesomeIcons.google),
               label: Text("Google ile Kayıt Ol"),
               style: ElevatedButton.styleFrom(
-                primary: Colors.red,
+                backgroundColor: Colors.red,
               ),
             ),
             SizedBox(height: 20),
