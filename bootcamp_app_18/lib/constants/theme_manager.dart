@@ -10,11 +10,11 @@ class ThemeManager {
     ),
     textTheme: const TextTheme(
       displayLarge: TextStyle(
-          fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.white),
+          fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.black),
       bodyLarge: TextStyle(
-          fontSize: 19.0, color: Colors.white, fontWeight: FontWeight.normal),
-      bodyMedium: TextStyle(fontSize: 16.0, color: Colors.white),
-      bodySmall: TextStyle(fontSize: 12.0, color: Colors.white),
+          fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.normal),
+      bodyMedium: TextStyle(fontSize: 16.0, color: Colors.black),
+      bodySmall: TextStyle(fontSize: 12.0, color: Colors.black),
     ),
     iconTheme: const IconThemeData(color: Colors.black, size: 30),
     buttonTheme: const ButtonThemeData(buttonColor: Colors.orange),
@@ -46,7 +46,7 @@ class ThemeManager {
     buttonTheme: const ButtonThemeData(buttonColor: Colors.orange),
     inputDecorationTheme: const InputDecorationTheme(
       filled: true,
-      fillColor: Color(0xFF252525),
+      fillColor: Color(0xFF666666),
     ),
     appBarTheme: const AppBarTheme(
       color: Color(0xFF191919),
