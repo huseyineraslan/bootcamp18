@@ -172,6 +172,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/fc1b8d66-0ff5-45f5-9330-5fef3261b88b" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/04f717c7-060d-4689-9318-cb53c1a38e4c" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/9095ab95-74ca-492b-b433-e4bb4362123a" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8af2999c-f59e-498f-8699-cf8a8515cde3" width="200" style="margin: 5px;" />
   </div>
 
 </details>
