@@ -221,7 +221,7 @@ class HomePageState extends State<HomePage> {
         } else if (title == 'İstatistikler') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const StatisticsPage()),
+            MaterialPageRoute(builder: (context) =>  StatisticsPage()),
           );
         }
       },
