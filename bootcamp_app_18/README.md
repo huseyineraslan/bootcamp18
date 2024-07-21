@@ -166,9 +166,9 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 **Sprint Notları**:
   
-    - **Bu sprint için beklenen toplam puan** : 200 puan
+  - **Bu sprint için beklenen toplam puan** : 200 puan
    
-    - **Puan Toplama Mantığı** : (235 puan toplandı)
+  - **Puan Toplama Mantığı** : (235 puan toplandı)
     - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
    
     - **Daily Scrum**: https://bit.ly/45R6pEp ----
