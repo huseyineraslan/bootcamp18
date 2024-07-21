@@ -147,16 +147,20 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   <summary><h3>Sprint 2 - Uygulama Ekran Görüntüleri</h3></summary> 
 
   <div style="display: flex; flex-wrap: wrap;">
-    <img src="https://github.com/user-attachments/assets/ee81fc76-800f-48ab-b687-c07b1c8fe8c4" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/72648b46-0b7a-4cb8-a6a2-c5fe73e0701a" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/606d6cf4-8bd6-4031-b2b1-facdca041ee1" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/e8ac0ed7-9041-4b68-a459-45fbe0eef5bb" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/8b64424d-ac16-41ac-8ff3-bb02f6e9c965" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/2be3396e-a094-4825-8c8a-a1db9484c8b5" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/931072c5-52fa-4815-88fe-ad17daba0f3d" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/642e6626-f707-4a36-8e1f-132123149ffd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/fc1b8d66-0ff5-45f5-9330-5fef3261b88b" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/03670b2d-5aa9-4de6-b885-1681c48f9b8e" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/db69b27a-7198-4bbb-b41f-7405ea7b98dd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/05de9b87-a606-4fb2-b8a5-4fe8d91ac0d0" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/5598e8af-e54a-4136-a571-d0e1e0c0da87" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/10f11744-f588-4570-9ff8-e411a4edf4c6" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/73f1bfe2-3662-4ecf-aa4b-1a6dbcf14032" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8683193a-0bd3-4502-8efc-e6024a4789df" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/22c0ba3c-c369-4f43-ac14-1584951c4323" width="200" style="margin: 5px;" />
   </div>
 
 </details>
+
 
 
 
