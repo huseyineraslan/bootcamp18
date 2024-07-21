@@ -164,7 +164,32 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   
 </details>
 
+**Sprint Notları**:
+  
+    - **Bu sprint için beklenen toplam puan** : 200 puan
+   
+    - **Puan Toplama Mantığı** : (235 puan toplandı)
+    - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+    - **Daily Scrum**: https://bit.ly/45R6pEp ----
+                      https://bit.ly/3XZ64xz
+    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    
+    - **Sprint Review**
+         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
+         - ` Kemal ` istatistikler sayfasını tamamlandı. 
+         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
+         - ` Kemal ` tarafından Trello verileri düzenlendi.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
+         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
+         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
+         - ` Kurtuluş ` hareket görsellerini hazırladı.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
+         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
+         - ` Hüseyin `tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
+         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
 
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
 
 # bootcamp_app_18
 
