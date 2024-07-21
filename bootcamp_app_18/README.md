@@ -80,22 +80,15 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 <details>
   <summary><h3>Sprint 1 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
 
-  <div style="display: flex; flex-wrap: wrap;">
-    <div style="flex: 1 0 25%; padding: 5px;">
-      <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/831ee1cc-10f4-4c8d-a5a1-e1900a84cdd7" width="100%" />
-    </div>
-    <div style="flex: 1 0 25%; padding: 5px;">
-      <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/92057be7-d6c9-4e39-9630-c16d3450cd36" width="100%" />
-    </div>
-    <div style="flex: 1 0 25%; padding: 5px;">
-      <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/d20b0fd5-1a1e-4e07-a502-f31050ebce85" width="100%" />
-    </div>
-    <div style="flex: 1 0 25%; padding: 5px;">
-      <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/ca19ce0e-0e07-4571-a3ce-28177093afa8" width="100%" />
-    </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/831ee1cc-10f4-4c8d-a5a1-e1900a84cdd7" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/92057be7-d6c9-4e39-9630-c16d3450cd36" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/d20b0fd5-1a1e-4e07-a502-f31050ebce85" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/ca19ce0e-0e07-4571-a3ce-28177093afa8" width="23%" style="margin: 1%;" />
   </div>
 
 </details>
+
 
   
 </details>
