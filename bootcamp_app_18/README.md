@@ -145,7 +145,13 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
   <details>
   <summary><h3>Sprint 2 - Uygulama Ekran Görüntüleri</h3></summary> 
-  Şimdi bu kısımda uygulama ekran görüntüleri yer almalı.
+  ![WhatsApp Image 2024-07-21 at 16 27 02](https://github.com/user-attachments/assets/ee81fc76-800f-48ab-b687-c07b1c8fe8c4)
+  ![WhatsApp Image 2024-07-21 at 16 27 01](https://github.com/user-attachments/assets/72648b46-0b7a-4cb8-a6a2-c5fe73e0701a)
+  ![WhatsApp Image 2024-07-21 at 16 27 01 (3)](https://github.com/user-attachments/assets/606d6cf4-8bd6-4031-b2b1-facdca041ee1)
+  ![WhatsApp Image 2024-07-21 at 16 27 01 (2)](https://github.com/user-attachments/assets/e8ac0ed7-9041-4b68-a459-45fbe0eef5bb)
+  ![WhatsApp Image 2024-07-21 at 16 27 00](https://github.com/user-attachments/assets/8b64424d-ac16-41ac-8ff3-bb02f6e9c965)
+  ![WhatsApp Image 2024-07-21 at 16 27 01 (1)](https://github.com/user-attachments/assets/2be3396e-a094-4825-8c8a-a1db9484c8b5)
+  
   </details>
 
   <details>
@@ -177,7 +183,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     
     - **Sprint Review**
          - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
-         - ` Kemal ` istatistikler sayfasını tamamlandı. 
+         - ` Kemal `, istatistikler sayfasını tamamladı. 
          - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
          - ` Kemal ` tarafından Trello verileri düzenlendi.
          - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
@@ -186,7 +192,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
          - ` Kurtuluş ` hareket görsellerini hazırladı.
          - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
          - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
-         - ` Hüseyin `tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
+         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
          - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
