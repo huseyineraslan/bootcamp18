@@ -152,9 +152,10 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   <summary><h3>Sprint 2 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
     
   ![Ekran Resmi 2024-07-21 15:23:24](https://github.com/user-attachments/assets/169847b6-2640-4612-98a9-07c196599f59)
-  ![Sprint 2 Ekran Görüntüsü 2](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.23.53.png)
-  ![Sprint 2 Ekran Görüntüsü 3](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.24.01.png)
-  ![Sprint 2 Ekran Görüntüsü 4](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.24.07.png)
+  ![Ekran Resmi 2024-07-21 15:23:53](https://github.com/user-attachments/assets/236d6bf6-4c65-42ad-9e8e-b6d3c70239c2)
+  ![Ekran Resmi 2024-07-21 15:24:01](https://github.com/user-attachments/assets/3e13c2aa-c5ee-403d-99aa-1e7b11db900e)
+  ![Ekran Resmi 2024-07-21 15:24:07](https://github.com/user-attachments/assets/3b2529af-eb68-4ffb-8917-6eb05ad05726)
+
 
 
 
