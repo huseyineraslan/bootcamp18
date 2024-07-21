@@ -143,7 +143,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 <details>
   <summary><h2>Sprint 2</h2></summary>
 
- <details>
+<details>
   <summary><h3>Sprint 2 - Uygulama Ekran Görüntüleri</h3></summary> 
 
   <div style="display: flex; flex-wrap: wrap;">
@@ -157,9 +157,12 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/73f1bfe2-3662-4ecf-aa4b-1a6dbcf14032" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/8683193a-0bd3-4502-8efc-e6024a4789df" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/22c0ba3c-c369-4f43-ac14-1584951c4323" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/04f717c7-060d-4689-9318-cb53c1a38e4c" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/9095ab95-74ca-492b-b433-e4bb4362123a" width="200" style="margin: 5px;" />
   </div>
 
 </details>
+
 
 
 
