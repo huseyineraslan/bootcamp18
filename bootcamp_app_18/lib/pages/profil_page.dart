@@ -18,6 +18,10 @@ class _ProfilPageState extends State<ProfilPage> {
   final _stepCountController = TextEditingController();
   final _ageController = TextEditingController();
   final _focusNode = FocusNode();
+  String? _selectedWeight;
+  String? _selectedHeight;
+  String? _selectedSteps;
+  String? _selectedAge;
   String? _selectedGender;
   bool? _isValid;
   String? _errorMessage;
@@ -51,7 +55,7 @@ class _ProfilPageState extends State<ProfilPage> {
   void _startStepCounter() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
-        _stepCount++; // Adım sayısı her saniye bir artıyor
+        _stepCount++;
       });
     });
   }
@@ -66,8 +70,7 @@ class _ProfilPageState extends State<ProfilPage> {
     // Simüle edilmiş boy ve kilo doğrulama
     await Future.delayed(const Duration(seconds: 1));
     setState(() {
-      _isValid =
-          true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
+      _isValid = true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
       _country = 'Turkey';
       _location = 'Istanbul';
       _locInfo = 'Country: $_country, Location: $_location';
@@ -89,215 +92,211 @@ class _ProfilPageState extends State<ProfilPage> {
     );
   }
 
+  void _enableDataEntry() {
+    setState(() {
+      _isSaved = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Text('Profil', style: Theme.of(context).textTheme.displayLarge),
-        IconButton(
-          icon: const Icon(Icons.logout),
-          onPressed: () {
-            _firebaseService.signOut();
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const LoginPage()),
-            );
-          },
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Profil', style: Theme.of(context).textTheme.headlineSmall),
+            IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                _firebaseService.signOut();
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+            ),
+          ],
         ),
-      ])),
+      ),
       body: Container(
-        decoration: const BoxDecoration(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.green, Colors.white70],
+            colors: [Theme.of(context).colorScheme.secondary, Colors.red],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Container(
-                  color: Colors.grey[300],
-                  child: Stack(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    radius: 60,
+                    backgroundImage: AssetImage('lib/assets/images/profile_picpp.jpg'),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(child: _buildDropdownField('Boy', 'Boy (cm)', _selectedHeight, _updateHeight, enabled: !_isSaved, start: 135)),
+                    const SizedBox(width: 10),
+                    Expanded(child: _buildDropdownField('Kilo', 'Kilo (kg)', _selectedWeight, _updateWeight, enabled: !_isSaved, start: 40)),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Expanded(child: _buildDropdownField('Adım Sayar', 'Adım Sayar', _selectedSteps, _updateSteps, enabled: !_isSaved, readOnly: true)),
+                    const SizedBox(width: 10),
+                    Expanded(child: _buildDropdownField('Yaş', 'Yaş', _selectedAge, _updateAge, enabled: !_isSaved, start: 15)),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                _buildGenderDropdown(),
+                const SizedBox(height: 20),
+                Container(
+                  padding: const EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white70,
+                    border: Border.all(color: Colors.white70),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Positioned.fill(
-                        child: Image.asset(
-                          'lib/assets/images/profile_16_9backimage.jpg', // Burada yolu değiştirin
-                          fit: BoxFit.cover,
-                        ),
+                      Text(
+                        'Durumunuz',
+                        style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
-                      const Center(
-                        child: CircleAvatar(
-                          radius: 60,
-                          backgroundImage:
-                              AssetImage('lib/assets/images/profile_pic.jpg'),
-                          backgroundColor: Colors.transparent,
-                          child: ClipOval(
-                            child: Image(
-                              image: AssetImage(
-                                  'lib/assets/images/profile_pic.jpg'),
-                              fit: BoxFit.cover,
-                              width: 120,
-                              height: 120,
-                            ),
-                          ),
-                        ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Adım sayınız hedeflenenin altında.',
+                        style: TextStyle(fontSize: 14.0, color: Colors.black),
                       ),
                     ],
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    const Text(
-                      'Boy',
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _heightController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: const InputDecoration(
-                        labelText: 'Boy (cm)',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Kilo',
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _weightController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: const InputDecoration(
-                        labelText: 'Kilo (kg)',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Adım Sayar',
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _stepCountController,
-                      maxLength: 5,
-                      readOnly: true, // Kullanıcı girişi engellendi
-                      decoration: const InputDecoration(
-                        labelText: 'Adım Sayar',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Yaş',
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    TextField(
-                      controller: _ageController,
-                      focusNode: _focusNode,
-                      maxLength: 3,
-                      decoration: const InputDecoration(
-                        labelText: 'Yaş',
-                        border: OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.number,
-                      enabled: !_isSaved,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Cinsiyet',
-                      style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    DropdownButtonFormField<String>(
-                      value: _selectedGender,
-                      items: ['Erkek', 'Kadın', 'Diğer'].map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: !_isSaved
-                          ? (newValue) {
-                              setState(() {
-                                _selectedGender = newValue;
-                              });
-                            }
-                          : null,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Cinsiyet',
-                      ),
-                      disabledHint: Text(_selectedGender ?? 'Seçilmedi'),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(12.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Durumunuz',
-                            style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            'Buraya durumunuz yazılacak.',
-                            style:
-                                TextStyle(fontSize: 14.0, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: !_isSaved ? _saveProfileInformation : null,
-                      child: const Text('Bilgileri Kaydet'),
-                    ),
-                  ],
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: !_isSaved ? _saveProfileInformation : null,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red, // Butonun arka plan rengi kırmızı
+                  ),
+                  child: const Text('Bilgileri Kaydet'),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                ElevatedButton.icon(
+                  onPressed: _isSaved ? _enableDataEntry : null,
+                  icon: const Icon(Icons.add),
+                  label: const Text('Veri Ekle'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue, // Butonun arka plan rengi mavi
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  void _updateHeight(String? newValue) {
+    setState(() {
+      _selectedHeight = newValue;
+    });
+  }
+
+  void _updateWeight(String? newValue) {
+    setState(() {
+      _selectedWeight = newValue;
+    });
+  }
+
+  void _updateSteps(String? newValue) {
+    setState(() {
+      _selectedSteps = newValue;
+    });
+  }
+
+  void _updateAge(String? newValue) {
+    setState(() {
+      _selectedAge = newValue;
+    });
+  }
+
+  Widget _buildDropdownField(String label, String hintText, String? value, void Function(String?) onChanged, {bool enabled = true, bool readOnly = false, int start = 1}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+        const SizedBox(height: 5),
+        DropdownButtonFormField<String>(
+          value: value,
+          items: _generateDropdownItems(start),
+          onChanged: enabled ? onChanged : null,
+          decoration: InputDecoration(
+            labelText: hintText,
+            border: OutlineInputBorder(),
+          ),
+          disabledHint: Text(value ?? hintText),
+        ),
+      ],
+    );
+  }
+
+  List<DropdownMenuItem<String>> _generateDropdownItems(int start) {
+    return List.generate(100, (index) {
+      final value = (index + start).toString();
+      return DropdownMenuItem<String>(
+        value: value,
+        child: Text(value),
+      );
+    });
+  }
+
+  Widget _buildGenderDropdown() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Cinsiyet',
+          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+        const SizedBox(height: 5),
+        DropdownButtonFormField<String>(
+          value: _selectedGender,
+          items: ['Erkek', 'Kadın', 'Diğer'].map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+          onChanged: !_isSaved
+              ? (newValue) {
+            setState(() {
+              _selectedGender = newValue;
+            });
+          }
+              : null,
+          decoration: const InputDecoration(
+            labelText: 'Cinsiyet',
+            border: OutlineInputBorder(),
+          ),
+          disabledHint: Text(_selectedGender ?? 'Cinsiyet'),
+        ),
+      ],
     );
   }
 }
