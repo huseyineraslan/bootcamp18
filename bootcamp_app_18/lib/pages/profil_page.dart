@@ -188,7 +188,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 ElevatedButton(
                   onPressed: !_isSaved ? _saveProfileInformation : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, // Butonun arka plan rengi kırmızı
+                    backgroundColor: Colors.blue,
                   ),
                   child: const Text('Bilgileri Kaydet'),
                 ),
@@ -198,7 +198,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   icon: const Icon(Icons.add),
                   label: const Text('Veri Ekle'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue, // Butonun arka plan rengi mavi
+                    backgroundColor: Colors.blue,
                   ),
                 ),
               ],
