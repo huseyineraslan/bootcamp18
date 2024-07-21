@@ -140,7 +140,28 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
       
       
 
+<details>
+  <summary><h2>Sprint 2</h2></summary>
 
+  <details>
+  <summary><h3>Sprint 2 - Uygulama Ekran Görüntüleri</h3></summary> 
+  Şimdi bu kısımda uygulama ekran görüntüleri yer almalı.
+  </details>
+
+  <details>
+  <summary><h3>Sprint 2 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
+    
+  ![Sprint 2 Ekran Görüntüsü 1](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.23.24.png)
+  ![Sprint 2 Ekran Görüntüsü 2](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.23.53.png)
+  ![Sprint 2 Ekran Görüntüsü 3](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.24.01.png)
+  ![Sprint 2 Ekran Görüntüsü 4](file:///Users/gullerkalyoncu/Desktop/Ekran%20Resmi%202024-07-21%2015.24.07.png)
+
+
+
+
+  </details>
+  
+</details>
 
 
 
