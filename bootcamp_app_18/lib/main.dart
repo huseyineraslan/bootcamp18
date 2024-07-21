@@ -2,6 +2,8 @@ import 'dart:core';
 import 'package:bootcamp_app_18/constants/theme_manager.dart';
 import 'package:bootcamp_app_18/firebase_options.dart';
 import 'package:bootcamp_app_18/pages/home_page.dart';
+import 'package:bootcamp_app_18/pages/ai_assistant_page.dart';  // Import yapıldı
+import 'package:bootcamp_app_18/pages/statistics_page.dart';     // Import yapıldı
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +43,10 @@ class _MyAppState extends State<MyApp> {
           isDarkTheme: _isDarkTheme,
           toggleTheme: _toggleTheme,
         ),
+        routes: {
+          '/aiAssistant': (context) => AIAssistantPage(),
+          '/statistics': (context) => StatisticsPage(),
+        },
         debugShowCheckedModeBanner: false,
       ),
     );
