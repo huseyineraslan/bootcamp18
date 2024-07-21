@@ -105,7 +105,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
    
     - **Daily Scrum**: https://bit.ly/45R6pEp ----
                       https://bit.ly/3XZ64xz
-    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    - **Sprint Board**  :[https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18](https://trello.com/invite/b/6697da3dc348e1f7f67260d2/ATTI2324ad24e14da27c8253b80cf9b92f926F0E1AE3/bootcamp-f18-sprint-2)
    
       
     - **Sprint Review**
