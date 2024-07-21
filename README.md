@@ -224,6 +224,25 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
          - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+      - **Sprint Retrospective:**
+        - Uygulamanın 4 ana işlevinden programlar kısmının tasarımı , kodlama ve firebase işlemleri yapılacak
+        - Uygulama bildirimleri ayarlanacak
+        - Uygulama bildirimleri sayfası yapılacak
+        - Sonradan eklenecek yeni bölgelerin fotoğrafları entegre edilecek
+        - Uygulama anlaşmalı olduğu reklamlar uzantıları veya görselleri eklenilecek
+        - Uygulama ücretli ve ücretsiz kullanılacağı sayfanın tasarımı
+        - Uygulama için geliştirilecek özellikler tartışılaşak
+        -  Başvuru son tamamlanma aşamasına geldikçe birim testleri ve diğer test işlemleri yazılarak yürütülecektir.
+        -  Ayarlardaki düğmeler için tüm sayfalar tamamlanacaktır.
+        -  Uygulamanın tanıtım videosu çekilecek ve yüklenilecek
+     
+
+
+    
+    
+      
+
 
 # bootcamp_app_18
 
