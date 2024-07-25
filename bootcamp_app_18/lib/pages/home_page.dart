@@ -211,7 +211,7 @@ class HomePageState extends State<HomePage> {
         } else if (title == 'Beslenme') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const NutritionPage()),
+            MaterialPageRoute(builder: (context) => NutritionPage()),
           );
         } else if (title == 'Programlar') {
           Navigator.push(
@@ -221,7 +221,7 @@ class HomePageState extends State<HomePage> {
         } else if (title == 'İstatistikler') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  StatisticsPage()),
+            MaterialPageRoute(builder: (context) => StatisticsPage()),
           );
         }
       },

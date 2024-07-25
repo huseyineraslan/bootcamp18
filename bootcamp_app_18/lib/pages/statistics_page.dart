@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class StatisticsPage extends StatefulWidget {
+  const StatisticsPage({super.key});
+
   @override
-  _StatisticsPageState createState() => _StatisticsPageState();
+  StatisticsPageState createState() => StatisticsPageState();
 }
 
-class _StatisticsPageState extends State<StatisticsPage> {
+class StatisticsPageState extends State<StatisticsPage> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
@@ -52,138 +54,143 @@ class _StatisticsPageState extends State<StatisticsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('İstatistikler'),
+        title: const Text('İstatistikler'),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue, Colors.purple],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.blue, Colors.purple],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      TextField(
-                        controller: _heightController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'Boy (cm)',
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.height),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      TextField(
-                        controller: _weightController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'Kilo (kg)',
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.monitor_weight),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      TextField(
-                        controller: _ageController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'Yaş',
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.cake),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: _calculateStats,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        TextField(
+                          controller: _heightController,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'Boy (cm)',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.height),
                           ),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
                         ),
-                        child: Text(
-                          'Hesapla',
-                          style: TextStyle(fontSize: 18),
+                        const SizedBox(height: 16),
+                        TextField(
+                          controller: _weightController,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'Kilo (kg)',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.monitor_weight),
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 16),
+                        TextField(
+                          controller: _ageController,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'Yaş',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.cake),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: _calculateStats,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepPurple,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                          ),
+                          child: const Text(
+                            'Hesapla',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.fitness_center,
-                              size: 40, color: Colors.blue),
-                          SizedBox(width: 10),
-                          Text(
-                            'Vücut Kitle Endeksi: ${_bmi.toStringAsFixed(2)}',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Icon(Icons.assessment, size: 40, color: Colors.green),
-                          SizedBox(width: 10),
-                          Text(
-                            'Durum: $_bmiCategory',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Icon(Icons.local_fire_department,
-                              size: 40, color: Colors.red),
-                          SizedBox(width: 10),
-                          Text(
-                            'Kalori İhtiyacı: ${_calorieNeeds.toStringAsFixed(2)} kcal',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Icon(Icons.flash_on, size: 40, color: Colors.orange),
-                          SizedBox(width: 10),
-                          Text(
-                            'Bazal Metabolizma: ${_bmr.toStringAsFixed(2)} kcal',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ],
-                      ),
-                    ],
+                const SizedBox(height: 20),
+                Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(Icons.fitness_center,
+                                size: 40, color: Colors.blue),
+                            const SizedBox(width: 10),
+                            Text(
+                              'Vücut Kitle Endeksi: ${_bmi.toStringAsFixed(2)}',
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            const Icon(Icons.assessment, size: 40, color: Colors.green),
+                            const SizedBox(width: 10),
+                            Text(
+                              'Durum: $_bmiCategory',
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            const Icon(Icons.local_fire_department,
+                                size: 40, color: Colors.red),
+                            const SizedBox(width: 10),
+                            Text(
+                              'Kalori İhtiyacı: ${_calorieNeeds.toStringAsFixed(2)} kcal',
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+
+                            const Icon(Icons.flash_on, size: 40, color: Colors.orange),
+                            const SizedBox(width: 10),
+                            Expanded(child: Text(
+                              'Bazal Metabolizma: ${_bmr.toStringAsFixed(2)} kcal',
+                              style: const TextStyle(fontSize: 18),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                              )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
