@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -44,8 +45,8 @@ class _MyAppState extends State<MyApp> {
           toggleTheme: _toggleTheme,
         ),
         routes: {
-          '/aiAssistant': (context) => AIAssistantPage(),
-          '/statistics': (context) => StatisticsPage(),
+          '/aiAssistant': (context) => const AIAssistantPage(),
+          '/statistics': (context) => const StatisticsPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

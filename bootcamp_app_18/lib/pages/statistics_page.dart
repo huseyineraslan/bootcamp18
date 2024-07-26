@@ -66,7 +66,7 @@ class StatisticsPageState extends State<StatisticsPage> {
             ),
           ),
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
                 Card(
@@ -134,7 +134,7 @@ class StatisticsPageState extends State<StatisticsPage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
                         Row(
