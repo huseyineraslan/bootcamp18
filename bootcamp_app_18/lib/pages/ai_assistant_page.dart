@@ -20,11 +20,11 @@ class AIAssistantPageState extends State<AIAssistantPage> {
   String? _goal;
   String? role;
   final String _goalQuestionContext =
-      'Kilo almak mı yoksa vermek mi istiyorsunuz? (Kilo Almak, Kilo Vermek)';
+      'Kilo almak mı yoksa vermek mi istiyorsunuz? (Kilo Almak, Kilo Vermek) 🎯🎯';
   final String _dietTypeQuestion =
-      'Lütfen beslenme türünüzü belirtin: Vejetaryen, Etçil, Protein Agirlikli veya Normal';
+      'Lütfen beslenme türünüzü belirtin: Vejetaryen🥦🥑, Etçil 🥩, Protein Agirlikli 🍳🍗 veya Normal 🥗🍇🍉🍓🍑';
   final aiErrorMessage =
-      "AI bağlanma hatası yaşıyorum. Şuan için size otomatik liste hazırlıyorum.AI için daha sonra tekrar deneyiniz.";
+      "❌ ⚠️ AI bağlanma hatası yaşıyorum. Şuan için size otomatik liste hazırlıyorum.AI için daha sonra tekrar deneyiniz.";
 
   @override
   void initState() {
@@ -36,7 +36,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
     setState(() {
       _messages.add({
         'role': 'ai',
-        'content': 'Merhaba! Size nasıl yardımcı olabilirim?'
+        'content': 'Merhaba!👋 Size nasıl yardımcı olabilirim?😊😊'
       });
       _messages.add({'role': 'ai', 'content': _dietTypeQuestion});
     });
@@ -89,7 +89,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
           _messages.add({
             'role': 'ai',
             'content':
-                'Kilo almak için önerilen beslenme programını sağlıyorum.Lütfen biraz bekleyin...'
+                'Kilo almak için önerilen beslenme programını sağlıyorum.📉🏃‍♀️Lütfen biraz bekleyin...'
           });
         });
         String? mealPlan = await _getMealPlan();
@@ -101,7 +101,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
           _messages.add({
             'role': 'ai',
             'content':
-                'Kilo vermek için önerilen beslenme programını sağlıyorum.Lütfen biraz bekleyin...'
+                'Kilo vermek için önerilen beslenme programını sağlıyorum.📉🏃‍♀️ Lütfen biraz bekleyin...'
           });
         });
         String? mealPlan = await _getMealPlan();
@@ -113,10 +113,16 @@ class AIAssistantPageState extends State<AIAssistantPage> {
       }
     } else {
       // ai ile konuşmaya devam
-      _messages.add({'role': 'ai', 'content': 'Lütfen biraz bekleyin.....'});
+      _messages.add({'role': 'ai', 'content': '⭐️Lütfen biraz bekleyin.....'});
       String? response = await _geminiAI.geminiTextPrompt(userMessage);
       if (response != null) {
         responsePrepare(response);
+      } else {
+        _messages.add({
+          'role': 'ai',
+          'content':
+              'Şu anda AI bağlantısı sağlayamıyorum.😞 Daha sonra tekrar deneyin.😢 '
+        });
       }
     }
   }
@@ -131,7 +137,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
 // ai den cevap alındıysa
       if (response != null) {
         responsePrepare(response);
-        return "Sormak istediğiniz başka birşey var mı?";
+        return " ❓ ❓ Sormak istediğiniz başka birşey var mı?";
       }
 
       // AI hatası durumunda otomatik liste önerisi yap
