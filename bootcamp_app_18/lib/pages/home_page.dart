@@ -1,11 +1,13 @@
 import 'dart:core';
 import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
+import 'package:bootcamp_app_18/pages/adversiment_dart';
 import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
 import 'package:bootcamp_app_18/pages/notifications_page.dart';
 import 'package:bootcamp_app_18/pages/nutrition_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/programs_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
+import 'package:bootcamp_app_18/widgets/ad_banner.dart'; 
 
 import 'package:flutter/material.dart';
 
@@ -40,22 +42,19 @@ class HomePageState extends State<HomePage> {
 
   @override
   void didChangeDependencies() {
-    //initState den sonra builden önce çalışır
     super.didChangeDependencies();
     calculateAspectRatio();
-    // Tüm resimleri önbeleğe yükle - yükleme yapılmamma durumunda gecikme meydana gelmektedir.
     if (!_imagesPrecached) {
       for (var quote in MotivationalQuotes.quotes) {
         precacheImage(AssetImage(quote['image']!), context);
       }
-      _imagesPrecached = true; // Tekrar çağrılmasını önlemek için
+      _imagesPrecached = true;
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appbar - profil - bildirim - söz
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight),
         child: AppBar(
@@ -70,117 +69,110 @@ class HomePageState extends State<HomePage> {
               ),
               onPressed: widget.toggleTheme,
             ),
-            //bildirimler
             IconButton(
               icon: const Icon(Icons.notifications),
               onPressed: () {
-                // Bildirim sayfasına yönlendirme
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const NotificationsPage()));
               },
             ),
-            //Profil
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () {
-                // Profil sayfasına yönlendirme
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const ProfilPage()));
-                /* Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));*/
               },
             ),
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //Motivasyon resim ve sözleri
-            GestureDetector(
-              onTap: _nextQuote,
-              child: Container(
-                height: motivationCardHeight,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        MotivationalQuotes.quotes[_currentIndex]['image']!),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      MotivationalQuotes.quotes[_currentIndex]['quote']!,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        backgroundColor: Colors.black26,
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                GestureDetector(
+                  onTap: _nextQuote,
+                  child: Container(
+                    height: motivationCardHeight,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                            MotivationalQuotes.quotes[_currentIndex]['image']!),
+                        fit: BoxFit.cover,
                       ),
-                      textAlign: TextAlign.center,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          MotivationalQuotes.quotes[_currentIndex]['quote']!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            backgroundColor: Colors.black26,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            //grid bölümü ezgersiz-diyet-hesaplama
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  //motivasyon cümlesi noktaları
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: _buildDotIndicator(),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: _buildDotIndicator(),
+                      ),
+                      const SizedBox(height: 10),
+                      Expanded(
+                        child: GridView.count(
+                          shrinkWrap: true,
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: aspectRatio,
+                          children: [
+                            _buildGridTile(
+                                'Egzersizler', Icons.fitness_center, context),
+                            _buildGridTile('Beslenme', Icons.restaurant, context),
+                            _buildGridTile(
+                                'Programlar', Icons.calendar_today, context),
+                            _buildGridTile(
+                                'İstatistikler', Icons.show_chart, context),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 10),
-                  // Gridview Section
-                  Expanded(
-                    child: GridView.count(
-                      shrinkWrap: true, //scroll
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: aspectRatio,
-                      children: [
-                        _buildGridTile(
-                            'Egzersizler', Icons.fitness_center, context),
-                        _buildGridTile('Beslenme', Icons.restaurant, context),
-                        _buildGridTile(
-                            'Programlar', Icons.calendar_today, context),
-                        _buildGridTile(
-                            'İstatistikler', Icons.show_chart, context),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          const AdBanner(),
+        ],
       ),
     );
   }
 
-  // Sonraki motivasyon alıntısına geçmek için mevcut alıntı günceller
   void _nextQuote() {
     setState(() {
       _currentIndex = (_currentIndex + 1) % _quotesLength;
     });
   }
 
-  // Her bir motivasyon alıntısı için bir daire göstergesi oluşturur
   List<Widget> _buildDotIndicator() {
     List<Widget> indicators = [];
     for (int i = 0; i < _quotesLength; i++) {
@@ -197,11 +189,9 @@ class HomePageState extends State<HomePage> {
     return indicators;
   }
 
-  // Grid alt bölümdeki öğeyi oluşturma metodu
   Widget _buildGridTile(String title, IconData icon, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // İlgili sayfaya yönlendirme
         if (title == 'Egzersizler') {
           Navigator.push(
             context,
@@ -251,7 +241,6 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  // Grid bölümündeki öğelerin boyutunu hesaplama - ekrana sığması hedeflenmiştir.
   void calculateAspectRatio() {
     double availableHeight = MediaQuery.of(context).size.height -
         appBarHeight -
@@ -261,7 +250,6 @@ class HomePageState extends State<HomePage> {
     aspectRatio =
         (MediaQuery.of(context).size.width / 2) / (availableHeight / 2);
 
-    // ChildAspectRatio 0'dan küçük veya 0 ise 1 olarak ayarlanır
     if (aspectRatio <= 0) {
       aspectRatio = 1;
     }
