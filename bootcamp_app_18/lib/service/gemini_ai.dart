@@ -2,10 +2,17 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 
 class GeminiAI {
   static const String _apiKey = ""; // api key buraya eklenecek
-  static late final GenerativeModel model;
+  static GeminiAI? _instance;
+  late final GenerativeModel model;
 
-  GeminiAI() {
+  // Private constructor to prevent direct instantiation
+  GeminiAI._internal() {
     _initialize();
+  }
+// Factory constructor to get the singleton instance
+  factory GeminiAI() {
+    _instance ??= GeminiAI._internal();
+    return _instance!;
   }
 
   void _initialize() {
