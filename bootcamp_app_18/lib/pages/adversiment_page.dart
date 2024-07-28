@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AdBanner extends StatefulWidget {
-  const AdBanner({Key? key}) : super(key: key);
+  const AdBanner({super.key});
 
   @override
-  _AdBannerState createState() => _AdBannerState();
+  AdBannerState createState() => AdBannerState();
 }
 
-class _AdBannerState extends State<AdBanner> {
+class AdBannerState extends State<AdBanner> {
   bool _showAd = true;
 
   @override

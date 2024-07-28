@@ -1,14 +1,12 @@
 import 'dart:core';
 import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
-import 'package:bootcamp_app_18/pages/adversiment_dart';
+import 'package:bootcamp_app_18/pages/adversiment_page.dart';
 import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
 import 'package:bootcamp_app_18/pages/notifications_page.dart';
 import 'package:bootcamp_app_18/pages/nutrition_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/programs_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
-import 'package:bootcamp_app_18/widgets/ad_banner.dart'; 
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -147,7 +145,8 @@ class HomePageState extends State<HomePage> {
                           children: [
                             _buildGridTile(
                                 'Egzersizler', Icons.fitness_center, context),
-                            _buildGridTile('Beslenme', Icons.restaurant, context),
+                            _buildGridTile(
+                                'Beslenme', Icons.restaurant, context),
                             _buildGridTile(
                                 'Programlar', Icons.calendar_today, context),
                             _buildGridTile(

@@ -70,7 +70,8 @@ class _ProfilPageState extends State<ProfilPage> {
     // Simüle edilmiş boy ve kilo doğrulama
     await Future.delayed(const Duration(seconds: 1));
     setState(() {
-      _isValid = true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
+      _isValid =
+          true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
       _country = 'Turkey';
       _location = 'Istanbul';
       _locInfo = 'Country: $_country, Location: $_location';
@@ -134,26 +135,39 @@ class _ProfilPageState extends State<ProfilPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Center(
+                const Center(
                   child: CircleAvatar(
                     radius: 60,
-                    backgroundImage: AssetImage('lib/assets/images/profile_picpp.jpg'),
+                    backgroundImage:
+                        AssetImage('lib/assets/images/profile_picpp.jpg'),
                   ),
                 ),
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    Expanded(child: _buildDropdownField('Boy', 'Boy (cm)', _selectedHeight, _updateHeight, enabled: !_isSaved, start: 135)),
+                    Expanded(
+                        child: _buildDropdownField(
+                            'Boy', 'Boy (cm)', _selectedHeight, _updateHeight,
+                            enabled: !_isSaved, start: 135)),
                     const SizedBox(width: 10),
-                    Expanded(child: _buildDropdownField('Kilo', 'Kilo (kg)', _selectedWeight, _updateWeight, enabled: !_isSaved, start: 40)),
+                    Expanded(
+                        child: _buildDropdownField(
+                            'Kilo', 'Kilo (kg)', _selectedWeight, _updateWeight,
+                            enabled: !_isSaved, start: 40)),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Row(
                   children: [
-                    Expanded(child: _buildDropdownField('Adım Sayar', 'Adım Sayar', _selectedSteps, _updateSteps, enabled: !_isSaved, readOnly: true)),
+                    Expanded(
+                        child: _buildDropdownField('Adım Sayar', 'Adım Sayar',
+                            _selectedSteps, _updateSteps,
+                            enabled: !_isSaved, readOnly: true)),
                     const SizedBox(width: 10),
-                    Expanded(child: _buildDropdownField('Yaş', 'Yaş', _selectedAge, _updateAge, enabled: !_isSaved, start: 15)),
+                    Expanded(
+                        child: _buildDropdownField(
+                            'Yaş', 'Yaş', _selectedAge, _updateAge,
+                            enabled: !_isSaved, start: 15)),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -233,13 +247,16 @@ class _ProfilPageState extends State<ProfilPage> {
     });
   }
 
-  Widget _buildDropdownField(String label, String hintText, String? value, void Function(String?) onChanged, {bool enabled = true, bool readOnly = false, int start = 1}) {
+  Widget _buildDropdownField(String label, String hintText, String? value,
+      void Function(String?) onChanged,
+      {bool enabled = true, bool readOnly = false, int start = 1}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           label,
-          style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+          style: const TextStyle(
+              fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         const SizedBox(height: 5),
         DropdownButtonFormField<String>(
@@ -248,7 +265,7 @@ class _ProfilPageState extends State<ProfilPage> {
           onChanged: enabled ? onChanged : null,
           decoration: InputDecoration(
             labelText: hintText,
-            border: OutlineInputBorder(),
+            border: const OutlineInputBorder(),
           ),
           disabledHint: Text(value ?? hintText),
         ),
@@ -272,7 +289,8 @@ class _ProfilPageState extends State<ProfilPage> {
       children: [
         const Text(
           'Cinsiyet',
-          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(
+              fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         const SizedBox(height: 5),
         DropdownButtonFormField<String>(
@@ -285,10 +303,10 @@ class _ProfilPageState extends State<ProfilPage> {
           }).toList(),
           onChanged: !_isSaved
               ? (newValue) {
-            setState(() {
-              _selectedGender = newValue;
-            });
-          }
+                  setState(() {
+                    _selectedGender = newValue;
+                  });
+                }
               : null,
           decoration: const InputDecoration(
             labelText: 'Cinsiyet',
