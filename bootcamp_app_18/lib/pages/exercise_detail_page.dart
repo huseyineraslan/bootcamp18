@@ -1,4 +1,5 @@
 import 'package:bootcamp_app_18/models/exercise_model.dart';
+import 'package:bootcamp_app_18/pages/exercises_page.dart';
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,7 @@ class ExerciseDetailPageState extends State<ExerciseDetailPage> {
                 const SizedBox(height: 16),
                 // Egzersiz Adımları varsa
                 buildDetailList(
+                  context,
                   'Egzersiz Adımları',
                   exercise.instructions!,
                   (item) => item,
@@ -59,16 +61,18 @@ class ExerciseDetailPageState extends State<ExerciseDetailPage> {
                 const SizedBox(height: 16),
                 // egzersiz detay bilgisinde Primary muscles varsa oluştur
                 buildDetailList(
+                  context,
                   'Primary Muscles',
                   exercise.primaryMuscles!,
-                  (muscle) => "- $muscle",
+                  (muscle) => "$muscle",
                 ),
                 const SizedBox(height: 16),
                 // egzersiz detay bilgisinde Secondary muscles varsa yaz.
                 buildDetailList(
+                  context,
                   'Secondary Muscles',
                   exercise.secondaryMuscles!,
-                  (muscle) => "- $muscle",
+                  (muscle) => "$muscle",
                 ),
               ],
             ),
@@ -83,8 +87,8 @@ class ExerciseDetailPageState extends State<ExerciseDetailPage> {
    buildDetailList : title, öğeler listesi ve her bir öğeyi nasıl 
    görüntüleyeceğinizi belirten bir itemBuilder fonksiyonu alır.
  */
-Widget buildDetailList(
-    String title, List<dynamic> items, String Function(dynamic) itemBuilder) {
+Widget buildDetailList(BuildContext context, String title, List<dynamic> items,
+    String Function(dynamic) itemBuilder) {
   //liste boşsa boş alan döndür
   if (items.isEmpty) return const SizedBox.shrink();
 
@@ -135,9 +139,20 @@ Widget buildDetailList(
       // Diğer listeler için genel map işlemi
       ...(!isInstructionsList
           ? items.map((item) {
-              return Text(
-                itemBuilder(item),
-                style: const TextStyle(fontSize: 16),
+              return GestureDetector(
+                onTap: () {
+                  // seçilen egzersiz kategorisine ait egzersizler sayfasına yönlendirme
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExercisesPage(categoryName: item),
+                    ),
+                  );
+                },
+                child: Text(
+                  "- ${itemBuilder(item)}",
+                  style: const TextStyle(fontSize: 16),
+                ),
               );
             }).toList()
           : []),

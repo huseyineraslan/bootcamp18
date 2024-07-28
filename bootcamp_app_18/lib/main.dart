@@ -37,7 +37,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AppProvider(),
+      create: (context) =>
+          AppProvider()..fetchExercises(), //egzersiz bilgisini çek
       child: MaterialApp(
         theme: _isDarkTheme ? ThemeManager.darkTheme : ThemeManager.lightTheme,
         home: HomePage(

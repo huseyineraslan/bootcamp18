@@ -12,7 +12,10 @@ class ExerciseCategoriesPage extends StatefulWidget {
 
 class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
   bool isLoading = true;
-
+/* 
+ egzersiz çekme işlemi uygulama açılırken (main) çekilir
+ hale getirildi istenirse buradan da çekme yapılabilir
+ */
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -97,7 +100,7 @@ class _ExerciseCategoriesPageState extends State<ExerciseCategoriesPage> {
   void fetchCategories() async {
     try {
       // Egzersiz verilerini çek, listen: false parametresi, widget'ın yeniden çizilmesini önler.
-      await Provider.of<AppProvider>(context, listen: false).fetchExercises();
+      //await Provider.of<AppProvider>(context, listen: false).fetchExercises();
       setState(() {
         isLoading = false;
       });

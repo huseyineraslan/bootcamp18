@@ -36,7 +36,10 @@ class HardProgramPage extends StatelessWidget {
             return Card(
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
-                title: Text(day),
+                title: Text(
+                  day.toUpperCase(),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: exercises.map((exercise) {

@@ -17,7 +17,7 @@ class ExercisesPageState extends State<ExercisesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exercises'),
+        title: Text('${capitalizeFirstLetter(widget.categoryName)} Exercises'),
       ),
       // ExerciseProvider sağlayıcısından egzersizleri almak için Consumer kullanalım
       body: Consumer<AppProvider>(
@@ -54,5 +54,10 @@ class ExercisesPageState extends State<ExercisesPage> {
         },
       ),
     );
+  }
+
+  String capitalizeFirstLetter(String input) {
+    if (input.isEmpty) return input;
+    return input[0].toUpperCase() + input.substring(1);
   }
 }

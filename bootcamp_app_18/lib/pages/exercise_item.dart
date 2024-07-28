@@ -1,3 +1,4 @@
+import 'package:bootcamp_app_18/pages/exercises_page.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseItem extends StatefulWidget {
@@ -6,10 +7,10 @@ class ExerciseItem extends StatefulWidget {
   const ExerciseItem({required this.exercise, super.key});
 
   @override
-  _ExerciseItemState createState() => _ExerciseItemState();
+  ExerciseItemState createState() => ExerciseItemState();
 }
 
-class _ExerciseItemState extends State<ExerciseItem> {
+class ExerciseItemState extends State<ExerciseItem> {
   bool _completed = false;
   bool _skipped = false;
 
@@ -38,7 +39,18 @@ class _ExerciseItemState extends State<ExerciseItem> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.exercise),
+        GestureDetector(
+            onTap: () {
+              // seçilen egzersiz kategorisine ait egzersizler sayfasına yönlendirme
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ExercisesPage(
+                      categoryName: widget.exercise.toLowerCase()),
+                ),
+              );
+            },
+            child: Text(widget.exercise)),
         Row(
           children: [
             IconButton(
