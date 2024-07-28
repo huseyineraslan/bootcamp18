@@ -1,6 +1,14 @@
 # Takım ve Ürün İsmi
 `Proodos Fit `
 
+## Ürün ismi hakkında: 
+
+`“Proodos”`kelimesi Antik Yunan’da “ilerleme” veya “gelişme” anlamına gelirdi. 
+Günümüzde modern çağın gereksinimlerine uygun, "yenilikçi gelişim" anlamını taşır. 
+
+## Slogan
+Antik Yunan'ın gücü yapay zekayla bütünleşti.
+
 # Ekip ve Ürün Hakkında Bilgi
 ## Takım Üyeleri
 
