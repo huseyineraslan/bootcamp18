@@ -22,6 +22,9 @@ class ExercisesPageState extends State<ExercisesPage> {
       // ExerciseProvider sağlayıcısından egzersizleri almak için Consumer kullanalım
       body: Consumer<AppProvider>(
         builder: (context, exerciseProvider, _) {
+          if (widget.categoryName.toLowerCase() == 'rest') {
+            return const Center(child: Text('Bugün dinlenme günü!'));
+          }
           // ExerciseProvider'dan kategoriye göre egzersizleri al
 
           List<Exercise> exercises =
