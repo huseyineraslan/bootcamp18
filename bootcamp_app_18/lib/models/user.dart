@@ -1,20 +1,42 @@
 class User {
-  String? email;
-  int? age;
+  String email;
+  String name;
+  String age;
+  double height;
+  double weight;
+  String gender;
+  String additionalInfo;
 
-  User({required this.email, required this.age});
+  User(
+      {required this.email,
+      required this.name,
+      required this.age,
+      required this.height,
+      required this.weight,
+      required this.additionalInfo,
+      required this.gender});
 
-  // From json
-  User.fromJson(Map<String, dynamic> json) {
-    email = json["email"];
-    age = json["age"];
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      email: json['email'],
+      name: json['name'],
+      age: json['age'],
+      height: json['height'],
+      weight: json['weight'],
+      gender: json['gender'],
+      additionalInfo: json['additionalInfo'] ?? '', // Eğer null ise boş string,
+    );
   }
 
-  // To json
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = {};
-    data["email"] = email;
-    data["age"] = age;
-    return data;
+    return {
+      'email': email,
+      'name': name,
+      'age': age,
+      'height': height,
+      'weight': weight,
+      'gender': gender,
+      'additionalInfo': additionalInfo,
+    };
   }
 }

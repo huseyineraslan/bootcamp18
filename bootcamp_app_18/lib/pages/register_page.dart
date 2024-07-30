@@ -1,10 +1,12 @@
 import 'package:bootcamp_app_18/pages/login_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -207,6 +209,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
         if (user != null) {
           // Kayıt başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
+
           successRegister();
         } else {
           // Kayıt başarısız
@@ -217,9 +220,11 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   void successRegister() {
+    Provider.of<AppProvider>(context, listen: false).login();
+
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
-        return const ProfilPage(); //burası ileride profil page olarak değiştirilecek
+        return const ProfilPage();
       },
     ));
 

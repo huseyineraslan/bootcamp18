@@ -1,9 +1,11 @@
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/register_page.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -200,6 +202,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void successLogin() {
+    Provider.of<AppProvider>(context, listen: false).login();
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
         return const ProfilPage();

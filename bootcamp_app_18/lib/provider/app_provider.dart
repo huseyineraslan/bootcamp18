@@ -1,4 +1,5 @@
 import 'package:bootcamp_app_18/models/exercise_model.dart';
+import 'package:bootcamp_app_18/pages/home_page.dart';
 import 'package:bootcamp_app_18/service/exercise_resource_service.dart';
 import 'package:flutter/material.dart';
 
@@ -51,8 +52,17 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void logout() {
+  void logout(BuildContext context) {
     _isLoggedIn = false;
     notifyListeners();
+
+    // Logout işlemi tamamlandıktan sonra HomePage'e dön
+    Navigator.of(context).popUntil((route) => route.isFirst);
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+    );
   }
 }

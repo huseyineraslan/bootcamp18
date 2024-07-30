@@ -34,9 +34,8 @@ dependencies:
   firebase_auth:
   google_sign_in:
   google_generative_ai:
+  pedometer:
  
-
-
 
 dev_dependencies:
   flutter_test:

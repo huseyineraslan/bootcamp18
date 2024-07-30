@@ -1,10 +1,14 @@
 import 'dart:async';
-import 'package:bootcamp_app_18/pages/login_page.dart';
+import 'package:bootcamp_app_18/pages/home_page.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfilPage extends StatefulWidget {
-  const ProfilPage({super.key});
+  const ProfilPage({
+    super.key,
+  });
 
   @override
   State<ProfilPage> createState() => _ProfilPageState();
@@ -23,21 +27,13 @@ class _ProfilPageState extends State<ProfilPage> {
   String? _selectedSteps;
   String? _selectedAge;
   String? _selectedGender;
-  bool? _isValid;
-  String? _errorMessage;
-  String? _country;
-  String? _location;
-  String? _locInfo;
-  String _name = 'hüseyin eraslan'; // Örnek koydum
+
   bool _isSaved = false;
-  int _stepCount = 0;
-  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
     _focusNode.addListener(_onFocusChange);
-    _startStepCounter(); // Adım sayar otomatik başlatılıyor
   }
 
   @override
@@ -48,16 +44,8 @@ class _ProfilPageState extends State<ProfilPage> {
     _stepCountController.dispose();
     _ageController.dispose();
     _focusNode.dispose();
-    _timer.cancel(); // Timer'i iptal et
-    super.dispose();
-  }
 
-  void _startStepCounter() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        _stepCount++;
-      });
-    });
+    super.dispose();
   }
 
   void _onFocusChange() {
@@ -70,12 +58,11 @@ class _ProfilPageState extends State<ProfilPage> {
     // Simüle edilmiş boy ve kilo doğrulama
     await Future.delayed(const Duration(seconds: 1));
     setState(() {
-      _isValid =
-          true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
-      _country = 'Turkey';
-      _location = 'Istanbul';
-      _locInfo = 'Country: $_country, Location: $_location';
-      _errorMessage = null;
+      //  _isValid =true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
+      //   _country = 'Turkey';
+      // _location = 'Istanbul';
+      // _locInfo = 'Country: $_country, Location: $_location';
+      //_errorMessage = null;
     });
   }
 
@@ -101,6 +88,8 @@ class _ProfilPageState extends State<ProfilPage> {
 
   @override
   Widget build(BuildContext context) {
+    // final pedometerService =Provider.of<PedometerService>(context); //adım sayarı dinle
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -111,12 +100,23 @@ class _ProfilPageState extends State<ProfilPage> {
               icon: const Icon(Icons.logout),
               onPressed: () {
                 _firebaseService.signOut();
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                final appProvider =
+                    Provider.of<AppProvider>(context, listen: false);
+                appProvider.logout(
+                  context,
                 );
               },
             ),
           ],
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const HomePage()),
+            );
+          },
         ),
       ),
       body: Container(
@@ -160,9 +160,14 @@ class _ProfilPageState extends State<ProfilPage> {
                 Row(
                   children: [
                     Expanded(
-                        child: _buildDropdownField('Adım Sayar', 'Adım Sayar',
-                            _selectedSteps, _updateSteps,
-                            enabled: !_isSaved, readOnly: true)),
+                        child: _buildDropdownField(
+                            //  pedometerService.stepCount.toString(),
+                            'Adım Sayısı',
+                            'Adım Sayar',
+                            _selectedSteps,
+                            _updateSteps,
+                            enabled: !_isSaved,
+                            readOnly: true)),
                     const SizedBox(width: 10),
                     Expanded(
                         child: _buildDropdownField(
@@ -210,7 +215,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 ElevatedButton.icon(
                   onPressed: _isSaved ? _enableDataEntry : null,
                   icon: const Icon(Icons.add),
-                  label: const Text('Veri Ekle'),
+                  label: const Text('Veri Ekle - Değişiklik Yap'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),

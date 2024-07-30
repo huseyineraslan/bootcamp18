@@ -2,21 +2,20 @@ import 'dart:core';
 import 'package:bootcamp_app_18/constants/motivational_quotes.dart';
 import 'package:bootcamp_app_18/pages/adversiment_page.dart';
 import 'package:bootcamp_app_18/pages/exercise_categories_page.dart';
+import 'package:bootcamp_app_18/pages/login_page.dart';
 import 'package:bootcamp_app_18/pages/notifications_page.dart';
 import 'package:bootcamp_app_18/pages/nutrition_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/pages/programs_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
+import 'package:bootcamp_app_18/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  final bool isDarkTheme;
-  final VoidCallback toggleTheme;
-
   const HomePage({
     super.key,
-    required this.isDarkTheme,
-    required this.toggleTheme,
   });
 
   @override
@@ -52,6 +51,8 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    AppProvider appProvider = Provider.of<AppProvider>(context, listen: false);
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(appBarHeight),
@@ -62,11 +63,14 @@ class HomePageState extends State<HomePage> {
           ),
           actions: [
             IconButton(
-              icon: Icon(
-                widget.isDarkTheme ? Icons.wb_sunny : Icons.nights_stay,
-              ),
-              onPressed: widget.toggleTheme,
-            ),
+                icon: Icon(
+                  themeProvider.isDarkTheme
+                      ? Icons.wb_sunny
+                      : Icons.nights_stay,
+                ),
+                onPressed: () {
+                  themeProvider.toggleTheme();
+                }),
             IconButton(
               icon: const Icon(Icons.notifications),
               onPressed: () {
@@ -79,13 +83,23 @@ class HomePageState extends State<HomePage> {
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () {
-                Navigator.push(
+                if (appProvider.isLoggedIn) {
+                  // Kullanıcı giriş yapmışsa profile page'ine yönlendir
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfilPage()));
+                    MaterialPageRoute(builder: (context) => const ProfilPage()),
+                  );
+                } else {
+                  // Kullanıcı giriş yapmamışsa login page'ine yönlendir
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                }
               },
             ),
           ],
+          automaticallyImplyLeading: false, // Geri düğmesini gizle
         ),
       ),
       body: Stack(
@@ -189,6 +203,7 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _buildGridTile(String title, IconData icon, BuildContext context) {
+    final appProvider = Provider.of<AppProvider>(context, listen: false);
     return GestureDetector(
       onTap: () {
         if (title == 'Egzersizler') {
@@ -198,10 +213,34 @@ class HomePageState extends State<HomePage> {
                 builder: (context) => const ExerciseCategoriesPage()),
           );
         } else if (title == 'Beslenme') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => NutritionPage()),
-          );
+          if (appProvider.isLoggedIn) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NutritionPage()),
+            );
+          } else {
+            // Giriş yapılmamışsa uyarı dialogu göster
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Giriş Yapılmadı'),
+                  content: const Text(
+                    'AI destekli diyetisyen kullanmak için lütfen giriş yapın.',
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('Tamam',
+                          style: Theme.of(context).textTheme.bodySmall),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (title == 'Programlar') {
           Navigator.push(
             context,
