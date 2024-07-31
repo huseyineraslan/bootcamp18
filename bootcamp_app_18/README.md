@@ -241,6 +241,32 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 </details>
 
+**Sprint Notları**:
+  - **Bu sprint için beklenen toplam puan** : 200 points
+  
+  - **Puan Toplama Mantığı** : (200 puan toplandı)
+  - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+  - **Daily Scrum**: https://bit.ly/45R6pEp ----
+                      https://bit.ly/3XZ64xz
+
+
+                      
+    - **Sprint Board**  : [Bootcamp F18 Sprint 2 Trello Board](https://trello.com/invite/b/6697da3dc348e1f7f67260d2/ATTI2324ad24e14da27c8253b80cf9b92f926F0E1AE3/bootcamp-f18-sprint-2)
+
+   
+      
+    - **Sprint Review**
+         - Tamamlanacak.
+         
+
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+        
+     
+     - **Sprint Retrospective:**
+        - Tamamlanacak.
+
 
 # bootcamp_app_18
 
