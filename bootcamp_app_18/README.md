@@ -322,7 +322,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 
                       
-    - **Sprint Board**  : [Bootcamp F18 Sprint 2 Trello Board](https://trello.com/invite/b/6697da3dc348e1f7f67260d2/ATTI2324ad24e14da27c8253b80cf9b92f926F0E1AE3/bootcamp-f18-sprint-2)
+    - **Sprint Board**  : [Bootcamp F18 Sprint 3 Trello Board](https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3)
 
    
       
