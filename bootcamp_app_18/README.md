@@ -6,7 +6,7 @@
 
 | İsim                | Ünvan          | Sosyal Medya    |
 |---------------------|----------------|-----------------|
-| Kemal Akarca | Scrum Master   |                 |
+| Kemal Akarca | Scrum Master   | [<img align="left" alt="linkedin | LinkedIn" width="24px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />][linkedin]                 |
 | Güller Kalyoncu      | Product Owner  |                 |
 | Havva Nur Ezginci   | Developer      |                 |
 | Hüseyin Eraslan  | Developer      |                 |
