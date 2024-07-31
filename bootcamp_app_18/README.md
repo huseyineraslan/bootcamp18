@@ -266,10 +266,9 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   <details>
   <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
     
-  ![Ekran Resmi 2024-07-21 15:23:24](https://github.com/user-attachments/assets/169847b6-2640-4612-98a9-07c196599f59)
-  ![Ekran Resmi 2024-07-21 15:23:53](https://github.com/user-attachments/assets/236d6bf6-4c65-42ad-9e8e-b6d3c70239c2)
-  ![Ekran Resmi 2024-07-21 15:24:01](https://github.com/user-attachments/assets/3e13c2aa-c5ee-403d-99aa-1e7b11db900e)
-  ![Ekran Resmi 2024-07-21 15:24:07](https://github.com/user-attachments/assets/3b2529af-eb68-4ffb-8917-6eb05ad05726)
+  ![Ekran Resmi 2024-07-21 15:23:24]([https://github.com/user-attachments/assets/169847b6-2640-4612-98a9-07c196599f59](https://github.com/user-attachments/assets/8f670f26-7345-4cd3-a5ff-3057a6784e92))
+  ![Ekran Resmi 2024-07-21 15:23:53]([https://github.com/user-attachments/assets/236d6bf6-4c65-42ad-9e8e-b6d3c70239c2](https://github.com/user-attachments/assets/5b47b3c0-8531-4acb-9154-b451952e21c4))
+  
 
 
 
