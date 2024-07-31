@@ -10,7 +10,8 @@
 | <p align="center"><img src="https://github.com/user-attachments/assets/0919dc0a-935e-4f21-a3b4-fea244f885ef" alt="Güller Kalyoncu" width="50" height="50"/></p> | Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a> |
 | <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p> | Havva Nur Ezginci   | Developer      | <a href="https://github.com/havva-nur-ezginci"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
 | <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p> | Kurtuluş Fidel Akyürek | Developer  | <a href="https://github.com/kfa-max"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
-| <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Person_icon.png/480px-Person_icon.png" alt="Prodoost Fit" width="50" height="50"/></p> | Prodoost Fit        | Startup        |                 |
+| <p align="center"><img src="https://github.com/user-attachments/assets/2565d5db-9c41-4f4c-8de6-2673ca092745" alt="image" width="50" height="50"/></p> | Prodoost Fit        | Startup        |                 |
+
 
 
 
