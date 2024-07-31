@@ -225,6 +225,23 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
 
+
+</details>
+
+<details>
+  <summary><h2>Sprint 3</h2></summary>
+
+  <details>
+  <summary><h3>Sprint 3 - Uygulama Ekran Görüntüleri</h3></summary> 
+  Şimdi bu kısımda uygulama ekran görüntüleri yer almalı.
+  </details>
+
+<details>
+  <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
+
+</details>
+
+
 # bootcamp_app_18
 
 A new Flutter project.
