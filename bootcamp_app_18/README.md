@@ -216,7 +216,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
     
     - **Sprint Review**
-          - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
+         
+         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
          - ` Kemal `, istatistikler sayfasını tamamladı. 
          - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
          - ` Kemal ` tarafından Trello verileri düzenlendi.
