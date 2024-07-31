@@ -10,10 +10,8 @@
 | <p align="center"><img src="https://github.com/user-attachments/assets/0919dc0a-935e-4f21-a3b4-fea244f885ef" alt="Güller Kalyoncu" width="50" height="50"/></p> | Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a> |
 | <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p>  | Havva Nur Ezginci   | Developer      | <a href="https://github.com/havva-nur-ezginci"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
 | <p align="center"><img src="https://github.com/user-attachments/assets/66782ed6-45c4-46ad-a9c4-7b2d95b35d6b" alt="Hüseyin Eraslan" width="50" height="50"/></p> | Hüseyin Eraslan     | Developer      | <a href="https://www.linkedin.com/in/h%C3%BCseyin-eraslan-60a1061b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/huseyineraslan"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/huseyin.eraslan1?igsh=MWZlYXZuNzB5cjVwdA%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a>              |
-| <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p>  | Kurtuluş Fidel Akyürek | Developer  | <a href="https://github.com/kfa-max"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
+| <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p>  | Kurtuluş Fidel Akyürek | Developer  | <a href="https://www.linkedin.com/in/kurtuluş-fidel-akyürek-b5171a2a4"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/kfa-max"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                |
 | <p align="center"><img src="https://github.com/user-attachments/assets/2565d5db-9c41-4f4c-8de6-2673ca092745" alt="image" width="50" height="50"/></p> | Prodoost Fit        | Startup        |                 |
-
-
 
 
 
@@ -216,6 +214,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
     
     - **Sprint Review**
+         
          - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
          - ` Kemal `, istatistikler sayfasını tamamladı. 
          - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
@@ -228,6 +227,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
          - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
          - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
          - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+         
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
      
@@ -289,21 +289,17 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
                       [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
 
       
-    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    - **Sprint Board**  : https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3
     
     - **Sprint Review**
-         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
-         - ` Kemal `, istatistikler sayfasını tamamladı. 
-         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
-         - ` Kemal ` tarafından Trello verileri düzenlendi.
-         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
-         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
-         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
-         - ` Kurtuluş ` hareket görsellerini hazırladı.
-         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
-         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
-         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
-         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+         - ` Havvanur ` basıldığında kas grubu sayfasına yönlendirme işlemini tamamladı. 
+         - ` Kemal `, reklamlar kısmını tamamladı. 
+         - ` Havvanur ` veri işlemlerini tamamladı.
+         - ` Güller ` Readme.md sayfasını düzenledi.
+         - ` Havvanur ` yapay zeka destekli diyetisyen (beslenme) kısmını tamamlandı.
+         - ` Hüseyin ` programlar sayfasını tamamladı. 
+         - ` Kemal ` trello üzerinde çalıştı.
+         - ` Kurtuluş ` video editi ve seslendirme işlemlerini tamamladı.
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
 
@@ -322,7 +318,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 
                       
-    - **Sprint Board**  : [Bootcamp F18 Sprint 2 Trello Board](https://trello.com/invite/b/6697da3dc348e1f7f67260d2/ATTI2324ad24e14da27c8253b80cf9b92f926F0E1AE3/bootcamp-f18-sprint-2)
+    - **Sprint Board**  : [Bootcamp F18 Sprint 3 Trello Board](https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3)
 
    
       
