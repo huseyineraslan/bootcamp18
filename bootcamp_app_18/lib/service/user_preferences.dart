@@ -1,24 +1,45 @@
-import 'package:bootcamp_app_18/models/user.dart';
+import 'dart:convert';
+import 'package:bootcamp_app_18/models/new_user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class UserPreferences {
-  static const String _keyEmail = 'email';
-  static const String _keyName = 'name';
-  static const String _keyAge = 'age';
-  static const String _keyHeight = 'height';
-  static const String _keyWeight = 'weight';
-  static const String _keyGender = 'gender';
-  static const String _keyAdditionalInfo = 'additional_info';
+class SharedPrefService {
+  // Kullanıcı bilgilerini kaydet
+  static Future<void> saveUserInfo(NewUser user) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String userJson = jsonEncode(user.toJson());
+    await prefs.setString(user.email!, userJson);
+  }
 
-  Future<void> saveUser(User user) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
+  // Kullanıcı bilgilerini yükle
+  static Future<NewUser?> getUserInfo(String email) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? userJson = prefs.getString(email); // Email'i anahtar olarak kullan
+    if (userJson != null) {
+      Map<String, dynamic> userMap = jsonDecode(userJson);
+      return NewUser.fromJson(userMap);
+    }
+    return null;
+  }
 
-    await prefs.setString(_keyEmail, user.email);
-    await prefs.setString(_keyName, user.name);
-    await prefs.setString(_keyAge, user.age);
-    await prefs.setDouble(_keyHeight, user.height);
-    await prefs.setDouble(_keyWeight, user.weight);
-    await prefs.setString(_keyGender, user.gender);
-    await prefs.setString(_keyAdditionalInfo, user.additionalInfo);
+  void updateUserProfile(NewUser userInfo) async {
+    // Mevcut bilgileri Shared Preferences'den alın
+    NewUser? user = await SharedPrefService.getUserInfo(userInfo.email!);
+
+    if (user != null) {
+      // Güncellemeleri yap
+      user.age = userInfo.age;
+      user.height = userInfo.height;
+      user.weight = userInfo.weight;
+      user.gender = userInfo.gender;
+      user.additionalInfo = userInfo.additionalInfo;
+      // Güncellenmiş bilgileri kaydet
+      SharedPrefService.saveUserInfo(user);
+    }
+  }
+
+  // Kullanıcı bilgilerini temizle
+  static Future<void> clearUserInfo(String email) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(email);
   }
 }

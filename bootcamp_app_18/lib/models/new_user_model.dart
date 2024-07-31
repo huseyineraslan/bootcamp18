@@ -1,13 +1,13 @@
-class User {
-  String email;
-  String name;
-  String age;
-  double height;
-  double weight;
-  String gender;
-  String additionalInfo;
+class NewUser {
+  String? email;
+  String? name;
+  String? age;
+  double? height;
+  double? weight;
+  String? gender;
+  String? additionalInfo;
 
-  User(
+  NewUser(
       {required this.email,
       required this.name,
       required this.age,
@@ -16,8 +16,8 @@ class User {
       required this.additionalInfo,
       required this.gender});
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
+  factory NewUser.fromJson(Map<String, dynamic> json) {
+    return NewUser(
       email: json['email'],
       name: json['name'],
       age: json['age'],
@@ -38,5 +38,19 @@ class User {
       'gender': gender,
       'additionalInfo': additionalInfo,
     };
+  }
+
+  // ToString metodu
+  @override
+  String toString() {
+    String additionalInfoString =
+        additionalInfo != null ? 'Ek Bilgiler: $additionalInfo' : '';
+
+    return 'Kullanıcı Bilgileri:\n'
+        'Yaş: ${age ?? 'Bilinmiyor'}, '
+        'Cinsiyet: ${gender ?? 'Bilinmiyor'}, '
+        'Boy: ${height ?? 0.0} cm, '
+        'Kilo: ${weight ?? 0.0} kg'
+        '$additionalInfoString';
   }
 }

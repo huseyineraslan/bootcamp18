@@ -5,6 +5,8 @@ class GeminiAI {
       "AIzaSyCp6O_vCcqesk9ODcBZCsC7211rvkuuQh8"; // api key buraya eklenecek
   static GeminiAI? _instance;
   late final GenerativeModel model;
+  Map<String, List<Map<String, String>>> _sessions =
+      {}; // Oturum verilerini saklama
 
   // Private constructor to prevent direct instantiation
   GeminiAI._internal() {
@@ -28,21 +30,36 @@ class GeminiAI {
     return true;
   }
 
-  Future<String?> geminiTextPrompt(String query) async {
+  Future<String?> geminiTextPrompt(String sessionId, String query) async {
     if (apiControl()) {
-      final content = [
-        //default test amaçlı text verilmiştir ileride değiştirilecek.
-        Content.text(query)
-      ];
+      _addMessageToSession(sessionId, 'user', query); // Kullanıcı mesajını ekle
+      final content = _getConversationContext(sessionId);
+
       final response = await model.generateContent(content);
       if (response.text != null) {
         print("RESPONSE TEXT ===================");
         print(response.text);
+
+        _addMessageToSession(
+            sessionId, 'ai', response.text!); // AI yanıtını ekle
+
         return response.text;
       } else {
         return null;
       }
     }
     return null;
+  }
+
+  void _addMessageToSession(String sessionId, String sender, String message) {
+    if (!_sessions.containsKey(sessionId)) {
+      _sessions[sessionId] = [];
+    }
+    _sessions[sessionId]!.add({'sender': sender, 'message': message});
+  }
+
+  List<Content> _getConversationContext(String sessionId) {
+    final sessionMessages = _sessions[sessionId] ?? [];
+    return sessionMessages.map((msg) => Content.text(msg['message']!)).toList();
   }
 }

@@ -1,5 +1,7 @@
+import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/gemini_ai.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // NOT :
 // gemini ai için : service/gemini_ai.dart dosyası içine api key koyulmalıdır.
@@ -15,7 +17,9 @@ class AIAssistantPageState extends State<AIAssistantPage> {
   final TextEditingController _controller = TextEditingController();
   final List<Map<String, String>> _messages = [];
   final GeminiAI _geminiAI = GeminiAI();
+  late AppProvider appProvider;
 
+  String? email;
   String? _dietType;
   String? _goal;
   String? role;
@@ -29,6 +33,8 @@ class AIAssistantPageState extends State<AIAssistantPage> {
   @override
   void initState() {
     super.initState();
+    appProvider = Provider.of<AppProvider>(context, listen: false);
+    email = appProvider.activeUserEmail ?? "";
     _initializeChat();
   }
 
@@ -114,7 +120,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
     } else {
       // ai ile konuşmaya devam
       _messages.add({'role': 'ai', 'content': '⭐️Lütfen biraz bekleyin.....'});
-      String? response = await _geminiAI.geminiTextPrompt(userMessage);
+      String? response = await _geminiAI.geminiTextPrompt(email!, userMessage);
       if (response != null) {
         responsePrepare(response);
       } else {
@@ -131,7 +137,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
     if (_dietType != null && _goal != null) {
       String query = "beslenme türüm:$_dietType hedefim:$_goal";
       //default test amaçlı text verilmiştir ileride değiştirilecek.
-      String? response = await _geminiAI.geminiTextPrompt(
+      String? response = await _geminiAI.geminiTextPrompt(email!,
           'Kullanıcı bilgilerine göre günlük öğünlerin diyet listesini ve sağlıklı beslenme hakkında bilgi vermelisin. Kullanıcı bilgisi; $query -Yaş:28  cinsiyet:kadın');
 
 // ai den cevap alındıysa

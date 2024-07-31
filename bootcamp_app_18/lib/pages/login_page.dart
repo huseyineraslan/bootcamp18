@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
     User? user = await _firebaseService.signInWithGoogle();
     if (user != null) {
       print('Signed in: ${user.displayName}');
-      successLogin();
+      successLogin(user.email!);
     } else {
       showDialogWarning();
       print('Sign in failed');
@@ -192,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
 
         if (user != null) {
           // Giriş başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
-          successLogin();
+          successLogin(user.email!);
         } else {
           // Kayıt başarısız
           showDialogWarning();
@@ -201,8 +201,8 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void successLogin() {
-    Provider.of<AppProvider>(context, listen: false).login();
+  void successLogin(String email) {
+    Provider.of<AppProvider>(context, listen: false).login(email);
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
         return const ProfilPage();

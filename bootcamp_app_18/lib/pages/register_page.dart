@@ -1,7 +1,9 @@
+import 'package:bootcamp_app_18/models/new_user_model.dart';
 import 'package:bootcamp_app_18/pages/login_page.dart';
 import 'package:bootcamp_app_18/pages/profil_page.dart';
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
+import 'package:bootcamp_app_18/service/user_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -182,7 +184,7 @@ class _RegisterPageState extends State<RegisterPage> {
     User? user = await _firebaseService.signInWithGoogle();
     if (user != null) {
       print('Signed in: ${user.displayName}');
-      successRegister();
+      successRegister(user.email!);
     } else {
       showDialogWarning();
       print('Sign in failed');
@@ -197,7 +199,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       String email = _emailController.text.trim();
       String password = _passwordController.text.trim();
-      //  String name = _nameController.text.trim();
+      String name = _nameController.text.trim();
 
       User? user =
           await _firebaseService.registerWithEmailAndPassword(email, password);
@@ -209,8 +211,16 @@ class _RegisterPageState extends State<RegisterPage> {
 
         if (user != null) {
           // Kayıt başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
-
-          successRegister();
+          SharedPrefService.saveUserInfo(NewUser(
+            email: email,
+            name: name,
+            age: null,
+            height: null,
+            weight: null,
+            additionalInfo: null,
+            gender: null,
+          ));
+          successRegister(email);
         } else {
           // Kayıt başarısız
           showDialogWarning();
@@ -219,8 +229,8 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
-  void successRegister() {
-    Provider.of<AppProvider>(context, listen: false).login();
+  void successRegister(String email) {
+    Provider.of<AppProvider>(context, listen: false).login(email);
 
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {

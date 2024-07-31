@@ -44,16 +44,20 @@ class AppProvider extends ChangeNotifier {
 
 // login yapılma durumu işlemleri
   bool _isLoggedIn = false;
+  String? _activeUserEmail;
 
   bool get isLoggedIn => _isLoggedIn;
+  String? get activeUserEmail => _activeUserEmail;
 
-  void login() {
+  void login(String email) {
     _isLoggedIn = true;
+    _activeUserEmail = email;
     notifyListeners();
   }
 
   void logout(BuildContext context) {
     _isLoggedIn = false;
+    _activeUserEmail = null;
     notifyListeners();
 
     // Logout işlemi tamamlandıktan sonra HomePage'e dön
