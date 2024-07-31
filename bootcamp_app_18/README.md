@@ -289,7 +289,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
                       [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
 
       
-    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    - **Sprint Board**  :https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3
     
     - **Sprint Review**
          - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
