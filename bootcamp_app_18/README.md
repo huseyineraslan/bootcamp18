@@ -189,6 +189,83 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   <details>
   <summary><h3>Sprint 2 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
     
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;">
+    <img src="https://github.com/user-attachments/assets/7a58b3f6-c901-47a4-a4b3-647cb93a48c1" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/user-attachments/assets/7fc37f3f-ca8c-485c-8cfd-2186b4278612" width="23%" style="margin: 1%;" />
+  </div>
+
+
+
+
+
+  </details>
+  
+</details>
+
+**Sprint Notları**:
+  
+  - **Bu sprint için beklenen toplam puan** : 200 puan
+   
+  - **Puan Toplama Mantığı** : (235 puan toplandı)
+    - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+    - **Daily Scrum**:[Toplantı Fotoğrafı](https://github.com/user-attachments/assets/e2c90160-294e-4f63-a393-2a071b142cf1)
+                      [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
+
+      
+    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    
+    - **Sprint Review**
+         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
+         - ` Kemal `, istatistikler sayfasını tamamladı. 
+         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
+         - ` Kemal ` tarafından Trello verileri düzenlendi.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
+         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
+         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
+         - ` Kurtuluş ` hareket görsellerini hazırladı.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
+         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
+         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
+         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+
+
+
+
+<details>
+  <summary><h2>Sprint 3</h2></summary>
+
+<details>
+  <summary><h3>Sprint 3 - Uygulama Ekran Görüntüleri</h3></summary> 
+
+  <div style="display: flex; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/03670b2d-5aa9-4de6-b885-1681c48f9b8e" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8683193a-0bd3-4502-8efc-e6024a4789df" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/db69b27a-7198-4bbb-b41f-7405ea7b98dd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/5598e8af-e54a-4136-a571-d0e1e0c0da87" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/10f11744-f588-4570-9ff8-e411a4edf4c6" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/22c0ba3c-c369-4f43-ac14-1584951c4323" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/73f1bfe2-3662-4ecf-aa4b-1a6dbcf14032" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/642e6626-f707-4a36-8e1f-132123149ffd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/05de9b87-a606-4fb2-b8a5-4fe8d91ac0d0" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/fc1b8d66-0ff5-45f5-9330-5fef3261b88b" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/04f717c7-060d-4689-9318-cb53c1a38e4c" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/9095ab95-74ca-492b-b433-e4bb4362123a" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8af2999c-f59e-498f-8699-cf8a8515cde3" width="200" style="margin: 5px;" />
+  </div>
+
+</details>
+
+
+
+
+
+  <details>
+  <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
+    
   ![Ekran Resmi 2024-07-21 15:23:24](https://github.com/user-attachments/assets/169847b6-2640-4612-98a9-07c196599f59)
   ![Ekran Resmi 2024-07-21 15:23:53](https://github.com/user-attachments/assets/236d6bf6-4c65-42ad-9e8e-b6d3c70239c2)
   ![Ekran Resmi 2024-07-21 15:24:01](https://github.com/user-attachments/assets/3e13c2aa-c5ee-403d-99aa-1e7b11db900e)
@@ -230,22 +307,6 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
          - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
-
-
-</details>
-
-<details>
-  <summary><h2>Sprint 3</h2></summary>
-
-  <details>
-  <summary><h3>Sprint 3 - Uygulama Ekran Görüntüleri</h3></summary> 
-  Şimdi bu kısımda uygulama ekran görüntüleri yer almalı.
-  </details>
-
-<details>
-  <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
-
-</details>
 
 
 
