@@ -6,12 +6,12 @@
 
 | İsim                | Ünvan          | Sosyal Medya    |
 |---------------------|----------------|-----------------|
-| Kemal Akarca | Scrum Master   | [![LinkedIn](https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg)](https://www.linkedin.com/in/gullerkalyoncu/)                |
-| Güller Kalyoncu      | Product Owner  |                 |
+| Kemal Akarca        | Scrum Master   |                 |
+| Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg" width="16"/></a> |
 | Havva Nur Ezginci   | Developer      |                 |
-| Hüseyin Eraslan  | Developer      |                 |
-| Kuruluş Fidel Akyürek         | Developer      |                 |
-| Prodoost Fit               | Startup        |                 |
+| Hüseyin Eraslan     | Developer      |                 |
+| Kurtuluş Fidel Akyürek | Developer  |                 |
+| Prodoost Fit        | Startup        |                 |
 
 
 # Ürün Tanımı
