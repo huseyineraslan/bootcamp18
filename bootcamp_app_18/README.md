@@ -9,10 +9,10 @@
 | Kemal Akarca        | Scrum Master   | <a href="https://www.linkedin.com/in/kemal-akarca-7225b9246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/KemalAkarca"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/keemal_akarc11?igsh=cWEzZmUyc3E0ZnJq&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a>                 |
 | Güller Kalyoncu     | Product Owner  |<a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a> |
 | Havva Nur Ezginci   | Developer      | <a href="https://github.com/havva-nur-ezginci"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
-| Hüseyin Eraslan     | Developer      |                 |
-| Kurtuluş Fidel Akyürek | Developer  |                 |
+| Hüseyin Eraslan     | Developer      | <a href="https://github.com/huseyineraslan"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                |
+| Kurtuluş Fidel Akyürek | Developer  | <a href="https://github.com/kfa-max"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
 | Prodoost Fit        | Startup        |                 |
-|
+
 
 
 
