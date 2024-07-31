@@ -7,11 +7,12 @@
 | İsim                | Ünvan          | Sosyal Medya    |
 |---------------------|----------------|-----------------|
 | Kemal Akarca        | Scrum Master   |                 |
-| Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" width="16"/></a> |
+| Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/github.svg" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/instagram.svg" width="16"/></a> |
 | Havva Nur Ezginci   | Developer      |                 |
 | Hüseyin Eraslan     | Developer      |                 |
 | Kurtuluş Fidel Akyürek | Developer  |                 |
 | Prodoost Fit        | Startup        |                 |
+
 
 
 
