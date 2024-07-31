@@ -4,14 +4,30 @@
 # Ekip ve Ürün Hakkında Bilgi
 ## Takım Üyeleri
 
-| İsim                | Ünvan          | Sosyal Medya    |
-|---------------------|----------------|-----------------|
-| Kemal Akarca | Scrum Master   |                 |
-| Güller Kalyoncu      | Product Owner  |                 |
-| Havva Nur Ezginci   | Developer      |                 |
-| Hüseyin Eraslan  | Developer      |                 |
-| Kuruluş Fidel Akyürek         | Developer      |                 |
-| Prodoost Fit               | Startup        |                 |
+| Fotoğraf            | İsim                | Ünvan          | Sosyal Medya    |
+|---------------------|---------------------|----------------|-----------------|
+| <p align="center"><img src="https://github.com/user-attachments/assets/a3cdcc05-0b16-47de-ad77-2f205c7c9b7e" alt="Kemal Akarca" width="50" height="50"/></p> | Kemal Akarca        | Scrum Master   | <a href="https://www.linkedin.com/in/kemal-akarca-7225b9246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/KemalAkarca"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/keemal_akarc11?igsh=cWEzZmUyc3E0ZnJq&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a>                 |
+| <p align="center"><img src="https://github.com/user-attachments/assets/0919dc0a-935e-4f21-a3b4-fea244f885ef" alt="Güller Kalyoncu" width="50" height="50"/></p> | Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a> |
+| <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p>  | Havva Nur Ezginci   | Developer      | <a href="https://github.com/havva-nur-ezginci"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
+| <p align="center"><img src="https://github.com/user-attachments/assets/66782ed6-45c4-46ad-a9c4-7b2d95b35d6b" alt="Hüseyin Eraslan" width="50" height="50"/></p> | Hüseyin Eraslan     | Developer      | <a href="https://www.linkedin.com/in/h%C3%BCseyin-eraslan-60a1061b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="https://github.com/user-attachments/assets/0ff4b2bd-f375-45f1-8b67-a43d752c7950" width="16"/></a> <a href="https://github.com/huseyineraslan"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/huseyin.eraslan1?igsh=MWZlYXZuNzB5cjVwdA%3D%3D&utm_source=qr"><img src="https://github.com/user-attachments/assets/f7a4e8f3-14ac-4ee5-a089-b5e724a059e2" width="16"/></a>              |
+| <p align="center"><img src="https://github.com/user-attachments/assets/22e1ba26-4a7d-49d2-9a5c-ce6af9f17404" alt="avatar_266033" width="50" height="50"/></p>  | Kurtuluş Fidel Akyürek | Developer  | <a href="https://github.com/kfa-max"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a>                 |
+| <p align="center"><img src="https://github.com/user-attachments/assets/2565d5db-9c41-4f4c-8de6-2673ca092745" alt="image" width="50" height="50"/></p> | Prodoost Fit        | Startup        |                 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Ürün Tanımı
@@ -214,6 +230,113 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
          - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+
+
+
+
+<details>
+  <summary><h2>Sprint 3</h2></summary>
+
+<details>
+  <summary><h3>Sprint 3 - Uygulama Ekran Görüntüleri</h3></summary> 
+
+  <div style="display: flex; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/03670b2d-5aa9-4de6-b885-1681c48f9b8e" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8683193a-0bd3-4502-8efc-e6024a4789df" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/db69b27a-7198-4bbb-b41f-7405ea7b98dd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/5598e8af-e54a-4136-a571-d0e1e0c0da87" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/10f11744-f588-4570-9ff8-e411a4edf4c6" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/22c0ba3c-c369-4f43-ac14-1584951c4323" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/73f1bfe2-3662-4ecf-aa4b-1a6dbcf14032" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/642e6626-f707-4a36-8e1f-132123149ffd" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/05de9b87-a606-4fb2-b8a5-4fe8d91ac0d0" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/fc1b8d66-0ff5-45f5-9330-5fef3261b88b" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/04f717c7-060d-4689-9318-cb53c1a38e4c" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/9095ab95-74ca-492b-b433-e4bb4362123a" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/8af2999c-f59e-498f-8699-cf8a8515cde3" width="200" style="margin: 5px;" />
+  </div>
+
+</details>
+
+
+
+
+
+  <details>
+  <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
+    
+  ![Ekran Resmi 2024-07-21 15:23:24]([https://github.com/user-attachments/assets/169847b6-2640-4612-98a9-07c196599f59](https://github.com/user-attachments/assets/8f670f26-7345-4cd3-a5ff-3057a6784e92))
+  ![Ekran Resmi 2024-07-21 15:23:53]([https://github.com/user-attachments/assets/236d6bf6-4c65-42ad-9e8e-b6d3c70239c2](https://github.com/user-attachments/assets/5b47b3c0-8531-4acb-9154-b451952e21c4))
+  
+
+
+
+
+
+  </details>
+  
+</details>
+
+**Sprint Notları**:
+  
+  - **Bu sprint için beklenen toplam puan** : 200 puan
+   
+  - **Puan Toplama Mantığı** : (235 puan toplandı)
+    - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+    - **Daily Scrum**:[Toplantı Fotoğrafı](https://github.com/user-attachments/assets/e2c90160-294e-4f63-a393-2a071b142cf1)
+                      [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
+
+      
+    - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
+    
+    - **Sprint Review**
+         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
+         - ` Kemal `, istatistikler sayfasını tamamladı. 
+         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
+         - ` Kemal ` tarafından Trello verileri düzenlendi.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
+         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
+         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
+         - ` Kurtuluş ` hareket görsellerini hazırladı.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
+         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
+         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
+         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+
+
+
+
+
+**Sprint Notları**:
+  - **Bu sprint için beklenen toplam puan** : 200 points
+  
+  - **Puan Toplama Mantığı** : (200 puan toplandı)
+  - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
+   
+  - **Daily Scrum**: https://bit.ly/45R6pEp ----
+                      https://bit.ly/3XZ64xz
+
+
+                      
+    - **Sprint Board**  : [Bootcamp F18 Sprint 2 Trello Board](https://trello.com/invite/b/6697da3dc348e1f7f67260d2/ATTI2324ad24e14da27c8253b80cf9b92f926F0E1AE3/bootcamp-f18-sprint-2)
+
+   
+      
+    - **Sprint Review**
+         - Tamamlanacak.
+         
+
+      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
+     
+        
+     
+     - **Sprint Retrospective:**
+        - Tamamlanacak.
+
 
 # bootcamp_app_18
 
