@@ -7,7 +7,7 @@
 | İsim                | Ünvan          | Sosyal Medya    |
 |---------------------|----------------|-----------------|
 | Kemal Akarca        | Scrum Master   |                 |
-| Güller Kalyoncu     | Product Owner  | <a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://img.icons8.com/color/16/000000/linkedin.png" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="/mnt/data/github.png" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://img.icons8.com/color/16/000000/instagram-new--v1.png" width="16"/></a> |
+| Güller Kalyoncu     | Product Owner  | Owner	<a href="https://www.linkedin.com/in/gullerkalyoncu/"><img src="https://img.icons8.com/color/16/000000/linkedin.png" width="16"/></a> <a href="https://github.com/Kalyoncuguller"><img src="https://github.com/user-attachments/assets/fbfefb3f-19df-4304-a2b6-74dda1d82437" width="16"/></a> <a href="https://www.instagram.com/guller_klyncc?igsh=MWs5eXZwMmJiZmc2Nw%3D%3D&utm_source=qr"><img src="https://img.icons8.com/color/16/000000/instagram-new--v1.png" width="16"/></a> |
 | Havva Nur Ezginci   | Developer      |                 |
 | Hüseyin Eraslan     | Developer      |                 |
 | Kurtuluş Fidel Akyürek | Developer  |                 |
