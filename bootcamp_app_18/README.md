@@ -216,14 +216,18 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
     
     - **Sprint Review**
-         - ` Havvanur ` basıldığında kas grubu sayfasına yönlendirme işlemini tamamladı. 
-         - ` Kemal `, reklamlar kısmını tamamladı. 
-         - ` Havvanur ` veri işlemlerini tamamladı.
-         - ` Güller ` Readme.md sayfasını düzenledi.
-         - ` Havvanur ` yapay zeka destekli diyetisyen (beslenme) kısmını tamamlandı.
-         - ` Hüseyin ` programlar sayfasını tamamladı. 
-         - ` Kemal ` trello üzerinde çalıştı.
-         - ` Kurtuluş ` video editi ve seslendirme işlemlerini tamamladı.
+          - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
+         - ` Kemal `, istatistikler sayfasını tamamladı. 
+         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
+         - ` Kemal ` tarafından Trello verileri düzenlendi.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
+         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
+         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
+         - ` Kurtuluş ` hareket görsellerini hazırladı.
+         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
+         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
+         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
+         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
          
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
@@ -289,18 +293,14 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     - **Sprint Board**  : https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3
     
     - **Sprint Review**
-         - ` Kemal ` istatistikler sayfasının figma taslak tasarımını tamamladı. 
-         - ` Kemal `, istatistikler sayfasını tamamladı. 
-         - ` Havvanur ` uygulama için API içerikleri ve veri seti araştırması yaptı. 
-         - ` Kemal ` tarafından Trello verileri düzenlendi.
-         - ` Hüseyin ` ve ` Havvanur ` tarafından profil sayfası düzenlendi. 
-         - ` Kurtuluş `, ` Güller  `,` Kemal `,` Havvanur ` ve ` Hüseyin ` tarafından uygulamanın ana renk tasarımına karar verildi.
-         - ` Güller ` ve  ` Hüseyin ` tarafından uygulama logosu tasarlandı.
-         - ` Kurtuluş ` hareket görsellerini hazırladı.
-         - ` Hüseyin ` ve ` Havvanur ` tarafından Firebase kurulumu yapıldı.
-         - ` Havvanur  ` uygulamaya dark ve light tema entegrasyonu yaptı.
-         - ` Hüseyin ` tarafından  vücut kitle endeksi hesaplama kodlaması ve Github'a entegre etme işlemleri gerçekleştirildi.
-         - ` Kemal` ve ` Güller ` trello üstünde çalıştı ve README.md dosyasını gerekli bölümleri yaptı .
+         - ` Havvanur ` basıldığında kas grubu sayfasına yönlendirme işlemini tamamladı. 
+         - ` Kemal `, reklamlar kısmını tamamladı. 
+         - ` Havvanur ` veri işlemlerini tamamladı.
+         - ` Güller ` Readme.md sayfasını düzenledi.
+         - ` Havvanur ` yapay zeka destekli diyetisyen (beslenme) kısmını tamamlandı.
+         - ` Hüseyin ` programlar sayfasını tamamladı. 
+         - ` Kemal ` trello üzerinde çalıştı.
+         - ` Kurtuluş ` video editi ve seslendirme işlemlerini tamamladı.
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
 
