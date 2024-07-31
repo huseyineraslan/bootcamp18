@@ -1,5 +1,7 @@
+import 'package:bootcamp_app_18/models/new_user_model.dart';
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/gemini_ai.dart';
+import 'package:bootcamp_app_18/service/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +20,7 @@ class AIAssistantPageState extends State<AIAssistantPage> {
   final List<Map<String, String>> _messages = [];
   final GeminiAI _geminiAI = GeminiAI();
   late AppProvider appProvider;
+  NewUser? activeUser;
 
   String? email;
   String? _dietType;
@@ -33,9 +36,21 @@ class AIAssistantPageState extends State<AIAssistantPage> {
   @override
   void initState() {
     super.initState();
-    appProvider = Provider.of<AppProvider>(context, listen: false);
-    email = appProvider.activeUserEmail ?? "";
     _initializeChat();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    appProvider = Provider.of<AppProvider>(context);
+    email = appProvider.activeUserEmail ?? "";
+    if (email != null) {
+      getActiveUserInfo(email!);
+    }
+  }
+
+  Future<void> getActiveUserInfo(String email) async {
+    activeUser = await SharedPrefService.getUserInfo(email);
   }
 
   Future<void> _initializeChat() async {
@@ -135,10 +150,11 @@ class AIAssistantPageState extends State<AIAssistantPage> {
 
   Future<String?> _getMealPlan() async {
     if (_dietType != null && _goal != null) {
-      String query = "beslenme türüm:$_dietType hedefim:$_goal";
-      //default test amaçlı text verilmiştir ileride değiştirilecek.
+      String query =
+          "${activeUser.toString()} beslenme türüm:$_dietType hedefim:$_goal";
+      print("$query =>>>>>>>>>>>>>><");
       String? response = await _geminiAI.geminiTextPrompt(email!,
-          'Kullanıcı bilgilerine göre günlük öğünlerin diyet listesini ve sağlıklı beslenme hakkında bilgi vermelisin. Kullanıcı bilgisi; $query -Yaş:28  cinsiyet:kadın');
+          'Kullanıcı bilgilerine göre günlük öğünlerin diyet listesini ve sağlıklı beslenme hakkında bilgi vermelisin. $query ');
 
 // ai den cevap alındıysa
       if (response != null) {

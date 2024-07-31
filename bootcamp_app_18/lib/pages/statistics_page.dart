@@ -1,4 +1,8 @@
+import 'package:bootcamp_app_18/models/new_user_model.dart';
+import 'package:bootcamp_app_18/provider/app_provider.dart';
+import 'package:bootcamp_app_18/service/user_preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class StatisticsPage extends StatefulWidget {
   const StatisticsPage({super.key});
@@ -11,6 +15,32 @@ class StatisticsPageState extends State<StatisticsPage> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
+
+  late AppProvider appProvider;
+  NewUser? activeUser;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    appProvider = Provider.of<AppProvider>(context);
+    String email = appProvider.activeUserEmail ?? "";
+    getActiveUserInfo(email);
+  }
+
+  Future<void> getActiveUserInfo(String email) async {
+    activeUser = await SharedPrefService.getUserInfo(email);
+    if (activeUser != null) {
+      if (activeUser!.height != null) {
+        _heightController.text = activeUser!.height!;
+      }
+      if (activeUser!.weight != null) {
+        _weightController.text = activeUser!.weight!;
+      }
+      if (activeUser!.age != null) {
+        _ageController.text = activeUser!.age!;
+      }
+    }
+  }
 
   double _bmi = 0;
   double _calorieNeeds = 0;
@@ -151,7 +181,8 @@ class StatisticsPageState extends State<StatisticsPage> {
                         const SizedBox(height: 10),
                         Row(
                           children: [
-                            const Icon(Icons.assessment, size: 40, color: Colors.green),
+                            const Icon(Icons.assessment,
+                                size: 40, color: Colors.green),
                             const SizedBox(width: 10),
                             Text(
                               'Durum: $_bmiCategory',
@@ -174,15 +205,16 @@ class StatisticsPageState extends State<StatisticsPage> {
                         const SizedBox(height: 10),
                         Row(
                           children: [
-
-                            const Icon(Icons.flash_on, size: 40, color: Colors.orange),
+                            const Icon(Icons.flash_on,
+                                size: 40, color: Colors.orange),
                             const SizedBox(width: 10),
-                            Expanded(child: Text(
-                              'Bazal Metabolizma: ${_bmr.toStringAsFixed(2)} kcal',
-                              style: const TextStyle(fontSize: 18),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                              )
+                            Expanded(
+                              child: Text(
+                                'Bazal Metabolizma: ${_bmr.toStringAsFixed(2)} kcal',
+                                style: const TextStyle(fontSize: 18),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -197,4 +229,3 @@ class StatisticsPageState extends State<StatisticsPage> {
     );
   }
 }
-

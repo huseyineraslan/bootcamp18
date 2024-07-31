@@ -8,6 +8,8 @@ https://api-ninjas.com/register
 
 siteye kaydolarak profil sayfası api key kısmından alabilirsiniz.
 
+Telefon doğrulama hizmeti ayarlanmıştır ancak henüz uygulama içinde kullanıma sunulamamıştır.
+
 */
 
 class PhoneValidationService {

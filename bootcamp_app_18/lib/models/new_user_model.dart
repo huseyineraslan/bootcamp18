@@ -62,7 +62,7 @@ class NewUser {
     addDetail('Ek Bilgiler', additionalInfo);
 
     return details.isEmpty
-        ? 'Kullanıcı bilgisi bilinmiyor'
+        ? 'Kullanıcı bilgisi:'
         : 'Kullanıcı Bilgileri:\n${details.join(', ')}';
   }
 }
