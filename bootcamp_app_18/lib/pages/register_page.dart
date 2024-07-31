@@ -211,6 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
         if (user != null) {
           // Kayıt başarılı olduğunda gerçekleştirmek istediğimiz işlemler buraya eklenebilir.
+
           SharedPrefService.saveUserInfo(NewUser(
             email: email,
             name: name,
@@ -219,6 +220,7 @@ class _RegisterPageState extends State<RegisterPage> {
             weight: null,
             additionalInfo: null,
             gender: null,
+            steps: null,
           ));
           successRegister(email);
         } else {
@@ -229,8 +231,11 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
-  void successRegister(String email) {
+  void successRegister(String email) async {
     Provider.of<AppProvider>(context, listen: false).login(email);
+    //   print("kaydolan kullanıcı bilgisi=>>>>>>>>>>>>>>>");
+    // NewUser? user = await SharedPrefService.getUserInfo(email);
+    //print(user?.name);
 
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {

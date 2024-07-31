@@ -3,6 +3,7 @@ import 'package:bootcamp_app_18/models/new_user_model.dart';
 import 'package:bootcamp_app_18/pages/home_page.dart';
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/service/firebase_auth.dart';
+import 'package:bootcamp_app_18/service/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,12 +18,9 @@ class ProfilPage extends StatefulWidget {
 
 class _ProfilPageState extends State<ProfilPage> {
   final AuthService _firebaseService = AuthService();
+  late AppProvider appProvider;
+  String? email;
 
-  final _weightController = TextEditingController();
-  final _heightController = TextEditingController();
-  final _stepCountController = TextEditingController();
-  final _ageController = TextEditingController();
-  final _focusNode = FocusNode();
   String? _selectedWeight;
   String? _selectedHeight;
   String? _selectedSteps;
@@ -31,56 +29,54 @@ class _ProfilPageState extends State<ProfilPage> {
 
   bool _isSaved = false;
 
-  late NewUser activeUser;
+  NewUser? activeUser;
 
   @override
   void initState() {
     super.initState();
-
-    _focusNode.addListener(_onFocusChange);
   }
 
   @override
-  void dispose() {
-    _focusNode.removeListener(_onFocusChange);
-    _weightController.dispose();
-    _heightController.dispose();
-    _stepCountController.dispose();
-    _ageController.dispose();
-    _focusNode.dispose();
-
-    super.dispose();
-  }
-
-  void _onFocusChange() {
-    if (!_focusNode.hasFocus) {
-      _validateWeightAndHeight();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    appProvider = Provider.of<AppProvider>(context);
+    email = appProvider.activeUserEmail ?? "";
+    if (email != null) {
+      getActiveUserInfo(email!);
     }
   }
 
-  void _validateWeightAndHeight() async {
-    // Simüle edilmiş boy ve kilo doğrulama
-    await Future.delayed(const Duration(seconds: 1));
-    setState(() {
-      //  _isValid =true; // Burayı gerçek bir doğrulama servisi ile değiştirecez havva
-      //   _country = 'Turkey';
-      // _location = 'Istanbul';
-      // _locInfo = 'Country: $_country, Location: $_location';
-      //_errorMessage = null;
-    });
+  Future<void> _saveProfileInformation() async {
+    //  profil bilgilerini kaydet
+
+    if (activeUser != null) {
+      // Eğer yeni değerler seçilmişse, activeUser objesini güncelle
+      activeUser?.weight = _selectedWeight ?? activeUser?.weight;
+      activeUser?.height = _selectedHeight ?? activeUser?.height;
+      activeUser?.age = _selectedAge ?? activeUser?.age;
+      activeUser?.gender = _selectedGender ?? activeUser?.gender;
+      activeUser?.steps = _selectedSteps ?? activeUser?.steps;
+
+      // Güncellenmiş bilgileri Shared Preferences'e kaydet
+      await SharedPrefService.saveUserInfo(activeUser!);
+
+      // UI'yı güncelle
+      setState(() {
+        _isSaved = true;
+      });
+
+      saveInfoMessage('Profil bilgileri kaydedildi.');
+    } else {
+      // Kullanıcı bilgisi yoksa ya da hatalı ise uygun bir mesaj göster
+      saveInfoMessage('Kullanıcı bilgileri bulunamadı veya güncellenemedi.');
+    }
   }
 
-  void _saveProfileInformation() {
-    //  profil bilgilerini kaydet
-    //SharedPrefService.saveUserInfo(user);
-    setState(() {
-      _isSaved = true;
-    });
-
+  void saveInfoMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Profil bilgileri kaydedildi.'),
-        duration: Duration(seconds: 2),
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -93,9 +89,6 @@ class _ProfilPageState extends State<ProfilPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final pedometerService =Provider.of<PedometerService>(context); //adım sayarı dinle
-
-//  NewUser user =
     return Scaffold(
         //appbar
         appBar: AppBar(
@@ -126,10 +119,6 @@ class _ProfilPageState extends State<ProfilPage> {
 
         //body
         body: Consumer<AppProvider>(builder: (context, appProvider, child) {
-          // Aktif kullanıcı e-posta adresini al
-          String? email = appProvider.activeUserEmail ?? "";
-          //  activeUser = await SharedPrefService.getUserInfo(email);
-
           return Container(
             width: double.infinity,
             height: double.infinity,
@@ -146,6 +135,7 @@ class _ProfilPageState extends State<ProfilPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    // profil avatar
                     const Center(
                       child: CircleAvatar(
                         radius: 60,
@@ -154,16 +144,20 @@ class _ProfilPageState extends State<ProfilPage> {
                       ),
                     ),
                     const SizedBox(height: 6),
+                    // Kullanıcı name hoşgeldiniz
                     Center(
-                        child:
-                            Text("Hoşgeldin 👋🏻 ${email.toUpperCase()} 🚀")),
+                      child: Text(activeUser?.name != null
+                          ? "Hoşgeldin 👋🏻 ${activeUser!.name!.toUpperCase()} 🚀"
+                          : "$email 🚀"),
+                    ),
                     const SizedBox(height: 20),
+                    // Boy - Kilo dropdown
                     Row(
                       children: [
                         Expanded(
                             child: _buildDropdownField('Boy', 'Boy (cm)',
                                 _selectedHeight, _updateHeight,
-                                enabled: !_isSaved, start: 135)),
+                                enabled: !_isSaved, start: 130)),
                         const SizedBox(width: 10),
                         Expanded(
                             child: _buildDropdownField('Kilo', 'Kilo (kg)',
@@ -172,17 +166,13 @@ class _ProfilPageState extends State<ProfilPage> {
                       ],
                     ),
                     const SizedBox(height: 10),
+                    // adım sayar - Yaş dropdown
                     Row(
                       children: [
                         Expanded(
-                            child: _buildDropdownField(
-                                //  pedometerService.stepCount.toString(),
-                                'Adım Sayısı',
-                                'Adım Sayar',
-                                _selectedSteps,
-                                _updateSteps,
-                                enabled: !_isSaved,
-                                readOnly: true)),
+                            child: _buildDropdownField('Adım Sayısı',
+                                'Adım Sayar', _selectedSteps, _updateSteps,
+                                enabled: !_isSaved, readOnly: true)),
                         const SizedBox(width: 10),
                         Expanded(
                             child: _buildDropdownField(
@@ -191,8 +181,10 @@ class _ProfilPageState extends State<ProfilPage> {
                       ],
                     ),
                     const SizedBox(height: 10),
+                    // Gender dropdown
                     _buildGenderDropdown(),
                     const SizedBox(height: 20),
+                    // Ek bilgi kutucuğu
                     Container(
                       padding: const EdgeInsets.all(12.0),
                       decoration: BoxDecoration(
@@ -220,6 +212,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    // Save button
                     ElevatedButton(
                       onPressed: !_isSaved ? _saveProfileInformation : null,
                       style: ElevatedButton.styleFrom(
@@ -228,6 +221,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       child: const Text('Bilgileri Kaydet'),
                     ),
                     const SizedBox(height: 10),
+                    // Değişiklik yap button
                     ElevatedButton.icon(
                       onPressed: _isSaved ? _enableDataEntry : null,
                       icon: const Icon(Icons.add),
@@ -242,6 +236,20 @@ class _ProfilPageState extends State<ProfilPage> {
             ),
           );
         }));
+  }
+
+  Future<void> getActiveUserInfo(String email) async {
+    activeUser = await SharedPrefService.getUserInfo(email);
+    if (mounted) {
+      setState(() {
+        // Kullanıcı verileri UI'da güncellendi
+        _selectedWeight = activeUser?.weight;
+        _selectedHeight = activeUser?.height;
+        _selectedAge = activeUser?.age;
+        _selectedGender = activeUser?.gender;
+        _selectedSteps = activeUser?.steps;
+      });
+    }
   }
 
   void _updateHeight(String? newValue) {

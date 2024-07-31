@@ -6,13 +6,14 @@ import 'package:bootcamp_app_18/pages/ai_assistant_page.dart';
 import 'package:bootcamp_app_18/pages/statistics_page.dart';
 import 'package:bootcamp_app_18/provider/app_provider.dart';
 import 'package:bootcamp_app_18/provider/theme_provider.dart';
+import 'package:bootcamp_app_18/service/user_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await SharedPrefService.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
