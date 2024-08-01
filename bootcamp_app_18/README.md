@@ -271,7 +271,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   </div>
 </details>
   
-
+<details>
 
 **Sprint Notları**:
   
