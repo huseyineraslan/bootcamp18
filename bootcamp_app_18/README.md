@@ -264,33 +264,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   </div>
 </details>
 
-
-**Sprint Notları**:
-  
-  - **Bu sprint için beklenen toplam puan** : 200 puan
-   
-  - **Puan Toplama Mantığı** : (235 puan toplandı)
-    - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
-   
-    - **Daily Scrum**:[Toplantı Fotoğrafı](https://github.com/user-attachments/assets/e2c90160-294e-4f63-a393-2a071b142cf1)
-                      [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
-
-      
-    - **Sprint Board**  : https://trello.com/invite/b/669ff20efd31ccdf80eca02c/ATTIc48614d1ff93d17cf30d6459f851ea8773BBB27D/bootcamp4-f18-sprint-3
-    
-    - **Sprint Review**
-         - ` Havvanur ` basıldığında kas grubu sayfasına yönlendirme işlemini tamamladı. 
-         - ` Kemal `, reklamlar kısmını tamamladı. 
-         - ` Havvanur ` veri işlemlerini tamamladı.
-         - ` Güller ` Readme.md sayfasını düzenledi.
-         - ` Havvanur ` yapay zeka destekli diyetisyen (beslenme) kısmını tamamlandı.
-         - ` Hüseyin ` programlar sayfasını tamamladı. 
-         - ` Kemal ` trello üzerinde çalıştı.
-         - ` Kurtuluş ` video editi ve seslendirme işlemlerini tamamladı.
-
-      - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
-
-
+</details>
 
 
 
@@ -298,7 +272,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   - **Bu sprint için beklenen toplam puan** : 200 points
   
   - **Puan Toplama Mantığı** : (200 puan toplandı)
-  - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteydik ve bu hedefe uılaştık.
+  - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteydik ve bu hedefe ulaştık.
    
   - **Daily Scrum**: https://bit.ly/45R6pEp ----
                       https://bit.ly/3XZ64xz
@@ -310,12 +284,17 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
    
       
     - **Sprint Review**
-         - Tamamlanacak.
-         
+         - ` Havvanur ` basıldığında kas grubu sayfasına yönlendirme işlemini tamamladı. 
+         - ` Kemal `, reklamlar kısmını tamamladı. 
+         - ` Havvanur ` veri işlemlerini tamamladı.
+         - ` Güller ` Readme.md sayfasını düzenledi.
+         - ` Havvanur ` yapay zeka destekli diyetisyen (beslenme) kısmını tamamlandı.
+         - ` Hüseyin ` programlar sayfasını tamamladı. 
+         - ` Kemal ` trello üzerinde çalıştı.
+         - ` Kurtuluş ` video editi ve seslendirme işlemlerini tamamladı.
 
       - **Sprint Review Katılımcıları :** `Kemal Akarca` , `Hüseyin Eraslan` , `Havvanur Ezginci ` , `Kurtuluş Fidel Akyürek` , `Güller Kalyoncu`
-     
-        
+              
      
      - **Sprint Retrospective:**
         - Yarışmanın başında belirlenen ve önceki sprintlerde bahsedilen tüm özellikleri başarıyla ekledik ve projeyi tamamladık.
