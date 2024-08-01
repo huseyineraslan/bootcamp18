@@ -302,7 +302,13 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
           ![Ekran_goruntusu_2024-08-01_221232](https://github.com/user-attachments/assets/7db058c7-b408-488f-905e-c1acc7476928)
 
 
-![2](https://github.com/user-attachments/assets/3d737086-9318-4f1a-bed0-627442a98d74)
+          ![2](https://github.com/user-attachments/assets/3d737086-9318-4f1a-bed0-627442a98d74)
+
+
+            # Next Step
+          - Egzersizlerin ve diyetleri favorileme özelliği kazandırmak istedik
+          - Bildirimleri ayarlamaya çalıştık 
+
 
 
 
