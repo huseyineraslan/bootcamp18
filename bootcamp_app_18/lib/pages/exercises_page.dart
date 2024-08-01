@@ -25,6 +25,14 @@ class ExercisesPageState extends State<ExercisesPage> {
           if (widget.categoryName.toLowerCase() == 'rest') {
             return const Center(child: Text('Bugün dinlenme günü!'));
           }
+          //bu kategoriye ait egzersiz listesi mevcut değil ise
+          if (!Provider.of<AppProvider>(context)
+              .uniquePrimaryMuscles
+              .contains(widget.categoryName)) {
+            return const Center(
+                child: Text(
+                    'Üzgünüm bu kategoriye ait şuan için egzersiz mevcut değil.😞'));
+          }
           // ExerciseProvider'dan kategoriye göre egzersizleri al
 
           List<Exercise> exercises =
