@@ -318,7 +318,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
         
      
      - **Sprint Retrospective:**
-        - Tamamlanacak.
+        - Yarışmanın başında belirlenen ve önceki sprintlerde bahsedilen tüm özellikleri başarıyla ekledik ve projeyi tamamladık.
+        - Takım olarak sprint süresince etkili bir iş birliği gerçekleştirdik ve sürekli gelişim gösterdik. 
 
 
 # bootcamp_app_18
