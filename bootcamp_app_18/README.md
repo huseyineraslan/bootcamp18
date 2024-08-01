@@ -237,10 +237,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 <details>
   <summary><h2>Sprint 3</h2></summary>
-
 <details>
   <summary><h3>Sprint 3 - Uygulama Ekran Görüntüleri</h3></summary> 
-
   <div style="display: flex; flex-wrap: wrap;">
     <img src="https://github.com/user-attachments/assets/03670b2d-5aa9-4de6-b885-1681c48f9b8e" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/8683193a-0bd3-4502-8efc-e6024a4789df" width="200" style="margin: 5px;" />
@@ -256,13 +254,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/9095ab95-74ca-492b-b433-e4bb4362123a" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/8af2999c-f59e-498f-8699-cf8a8515cde3" width="200" style="margin: 5px;" />
   </div>
-
 </details>
-
-
-
-
-
+  
 <details>
   <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
@@ -270,8 +263,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/5b47b3c0-8531-4acb-9154-b451952e21c4" width="50%" style="margin: 1%;" />
   </div>
 </details>
-  
-<details>
+
 
 **Sprint Notları**:
   
