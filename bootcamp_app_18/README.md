@@ -207,9 +207,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   - **Puan Toplama Mantığı** : (235 puan toplandı)
     - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
    
-    - **Daily Scrum**: [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/fa2bcf59-c886-40d9-8d97-f50afc265324)
-                       [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cbb41b67-c762-4d47-8130-3707facb219a)
-                       [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/e7c86147-9dec-44b8-a6c9-10a55325d54c)
+    - **Daily Scrum**: [Toplantı Fotoğrafı](https://github.com/user-attachments/assets/e2c90160-294e-4f63-a393-2a071b142cf1)
+                       [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cb9779be-db3b-4058-8b98-17566755ad7c)
 
       
     - **Sprint Board**  :https://trello.com/invite/b/XJ82NXi1/ATTI4c85468607bb9dbed7f48f1ec2f20d0f2BF191F9/bootcamp-f18
@@ -275,8 +274,9 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
   - **Puan Toplama Mantığı** : (200 puan toplandı)
   - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteydik ve bu hedefe ulaştık.
    
-  - **Daily Scrum**: https://bit.ly/45R6pEp ----
-                      https://bit.ly/3XZ64xz
+  - **Daily Scrum**: [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/fa2bcf59-c886-40d9-8d97-f50afc265324)
+                     [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/cbb41b67-c762-4d47-8130-3707facb219a)
+                     [WhatsApp Fotoğrafı](https://github.com/user-attachments/assets/e7c86147-9dec-44b8-a6c9-10a55325d54c)
 
 
                       
