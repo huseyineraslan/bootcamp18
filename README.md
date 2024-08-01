@@ -1,3 +1,6 @@
+![iconproodosfit](https://github.com/user-attachments/assets/43bd6351-785c-4a73-9c1f-17442e7bf9b5)
+
+
 # Takım ve Ürün İsmi
 `Proodos Fit `
 
@@ -292,7 +295,15 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
      
      - **Sprint Retrospective:**
         - Yarışmanın başında belirlenen ve önceki sprintlerde bahsedilen tüm özellikleri başarıyla ekledik ve projeyi tamamladık.
-        - Takım olarak sprint süresince etkili bir iş birliği gerçekleştirdik ve sürekli gelişim gösterdik. 
+        - Takım olarak sprint süresince etkili bir iş birliği gerçekleştirdik ve sürekli gelişim gösterdik.
+      
+          # Kullanılan Teknolojiler
+
+          ![Ekran_goruntusu_2024-08-01_221232](https://github.com/user-attachments/assets/7db058c7-b408-488f-905e-c1acc7476928)
+
+
+![2](https://github.com/user-attachments/assets/3d737086-9318-4f1a-bed0-627442a98d74)
+
 
 
 # bootcamp_app_18
