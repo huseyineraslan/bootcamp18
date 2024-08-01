@@ -112,7 +112,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
   - Kullanıcı arayüzü tasarımları için `Figma` ve `Android Studio` kullanılmasına karar verilmiştir.
 
-    - **Bu sprint için beklenen toplam puan** : 200 points
+    - **Bu sprint için beklenen toplam puan** : 200 puan
    
     - **Puan Toplama Mantığı** : (200 puan toplandı)
     - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteyiz.
@@ -269,7 +269,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 
 **Sprint Notları**:
-  - **Bu sprint için beklenen toplam puan** : 200 points
+  - **Bu sprint için beklenen toplam puan** : 200 puan
   
   - **Puan Toplama Mantığı** : (200 puan toplandı)
   - İlk sprint 200 puan, ikinci sprint 200 puan ve üçüncü sprint 200 puan hedefine sahiptir. Toplamda 600 puana ulaşmayı hedeflemekteydik ve bu hedefe ulaştık.
