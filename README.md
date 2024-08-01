@@ -46,6 +46,18 @@ Prodoos Fit, kullanıcıların egzersizleri ve diyet önerilerini kategorize etm
 ### Favoriler
 Favoriler özelliği, kullanıcıların ilgilerini çeken egzersizleri ve diyetleri kaydetmelerine ve düzenlemelerine olanak tanır. Bu kişisel katalog, kullanıcıların hızlı karar vermelerine yardımcı olur ve istedikleri zaman favori öğeleri kiralamalarını sağlar.
 
+### Kalori İhtiyacı Hesaplama
+Prodoos Fit, kullanıcıların günlük kalori ihtiyaçlarını hesaplamalarına imkan tanır. Kullanıcıların yaş, boy ve kilo bilgilerini kullanarak, günlük enerji tüketimlerini ve metabolizma hızlarını belirler. Bu özellik, kullanıcıların beslenme alışkanlıklarını düzenlemelerine ve hedeflerine ulaşmalarına yardımcı olur.
+
+### Profil Bilgilerini Kaydetme ve Erişim
+Uygulamamız, kullanıcıların profil bilgilerini kaydetmelerine ve bu bilgileri AI Diyetisyen, İstatistik ve Profil sayfalarında kullanmalarına olanak tanıyarak sorunsuz bir deneyim sunar.
+
+### Konuşma Geçmişi Takibi ve Tutarlı Yanıtlar
+Uygulamamız, kullanıcıların konuşma geçmişini takip ederek yapay zekanın (AI) daha tutarlı yanıtlar vermesini desteklemektedir. Bu özellik, AI'nın bir konuşmada önceki mesajları hatırlamasını sağlayarak daha ilgili ve tutarlı yanıtlar sunmasını mümkün kılar.
+
+### Kullanılan DB Verisi Bilgisi
+Bu uygulama, egzersiz verilerini ve bilgilerini sağlamak için GitHub'da bulunan Free Exercise Database adlı açık kaynaklı veri kümesini kullanmaktadır. Bu veri kümesi, çeşitli egzersizlerin açıklamalarını, adımlarını ve görsellerini içermektedir. Veri kümesine şu adresten ulaşılabilir: https://github.com/havva-nur-ezginci/free-exercise-db_tr.
+
 
 
 </details>
