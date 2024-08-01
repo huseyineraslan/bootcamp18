@@ -266,8 +266,8 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 <details>
   <summary><h3>Sprint 3 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <img src="https://github.com/user-attachments/assets/8f670f26-7345-4cd3-a5ff-3057a6784e92" width="30%" style="margin: 1%;" />
-    <img src="https://github.com/user-attachments/assets/5b47b3c0-8531-4acb-9154-b451952e21c4" width="30%" style="margin: 1%;" />
+    <img src="https://github.com/user-attachments/assets/8f670f26-7345-4cd3-a5ff-3057a6784e92" width="50%" style="margin: 1%;" />
+    <img src="https://github.com/user-attachments/assets/5b47b3c0-8531-4acb-9154-b451952e21c4" width="50%" style="margin: 1%;" />
   </div>
 </details>
   
