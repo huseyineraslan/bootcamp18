@@ -37,18 +37,6 @@ Prodoos Fit, kullanıcıların vücut kitle indeksini (BMI) hesaplamalarına ola
 ### Yapay Zeka Tabanlı Diyetisyen
 Prodoos Fit, yapay zeka tabanlı bir diyetisyen hizmeti sunar. Kullanıcılar, kişisel sağlık bilgilerine ve hedeflerine göre özelleştirilmiş diyet önerileri alabilirler.
 
-### Güvenli Ödeme Sistemi
-Prodoos Fit, kullanıcıların güvenli bir şekilde ödeme yapmasını sağlar. Diyetisyen hizmetleri ve diğer ücretli özellikler, platform üzerinden güvenli ödeme işlemleri ile gerçekleştirilir.
-
-### Değerlendirme ve Yorum Sistemi
-Prodoos Fit, kullanıcıların birbirlerini değerlendirmelerini ve yorum yapmalarını sağlar. Bu özellik, kullanıcıların diğer kullanıcıların güvenilirliğini ve memnuniyet seviyesini değerlendirmelerine olanak tanır.
-
-### Rezervasyon Yönetimi
-Prodoos Fit, kullanıcıların diyetisyen randevularını ve egzersiz programlarını yönetmelerine olanak tanır. Kullanıcılar, istedikleri tarih aralığında randevu alabilir ve programlarını düzenleyebilirler.
-
-### Kullanıcılar Arası İletişim
-Prodoos Fit, kullanıcıların birbirleriyle iletişim kurmasını sağlar. Kullanıcılar, diyetisyenler veya egzersiz eğitmenleri ile doğrudan iletişime geçebilir, sorular sorabilir ve detayları görüşebilirler. Sohbet özelliği, daha güvenli ve kişiselleştirilmiş bir iletişim deneyimi sunar.
-
 ### Kullanıcı Desteği
 Prodoos Fit, kullanıcılarına müşteri destek hizmetleri sunar. Kullanıcılar, platformla ilgili herhangi bir sorun veya sorularında müşteri hizmetleri ile iletişime geçebilir ve yardım alabilirler.
 
@@ -58,8 +46,7 @@ Prodoos Fit, kullanıcıların egzersizleri ve diyet önerilerini kategorize etm
 ### Favoriler
 Favoriler özelliği, kullanıcıların ilgilerini çeken egzersizleri ve diyetleri kaydetmelerine ve düzenlemelerine olanak tanır. Bu kişisel katalog, kullanıcıların hızlı karar vermelerine yardımcı olur ve istedikleri zaman favori öğeleri kiralamalarını sağlar.
 
-### Çok Dilli Destek
-Prodoos Fit, çok dilli destek sunarak platformun farklı dil kökenlerinden gelen insanlar için erişilebilir ve kullanıcı dostu olmasını sağlar. Kullanıcılar, platformda gezinirken, öğeleri incelerken ve diğer kullanıcılarla iletişim kurarken tercih ettikleri dili kullanabilirler. Çok dilli destek, dil bariyerlerini aşmayı ve Prodoos Fit'te daha kapsayıcı ve küresel bir topluluk oluşturmayı amaçlar.
+
 
 </details>
 
