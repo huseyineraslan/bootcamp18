@@ -15,18 +15,12 @@
 
 
 
+# Slogan
+Antik Yunan'ın gücü yapay zekayla bütünleşti.
 
-
-
-
-
-
-
-
-
-
-
-
+# Ürün İsmi Hakkında:
+“Proodos”kelimesi Antik Yunan’da “ilerleme” veya “gelişme” anlamına gelirdi. 
+Günümüzde modern çağın gereksinimlerine uygun, "yenilikçi gelişim" anlamını taşır.
 
 # Ürün Tanımı
 Prodoos Fit, kullanıcıların belirli vücut bölgeleri için egzersiz önerileri almasını sağlayan bir  uygulamadır. Uygulama ayrıca, kullanıcıların vücut kitle indeksini hesaplayarak kişisel plan oluşturur ve yapay zeka tabanlı bir diyetisyen aracılığıyla kişiselleştirilmiş diyet önerileri almalarına olanak tanır. Amacımız, kullanıcıların sağlık ve fitness hedeflerine ulaşmalarına yardımcı olacak kapsamlı bir araç sunmaktır.
