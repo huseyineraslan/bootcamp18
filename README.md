@@ -244,10 +244,10 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/c6241d32-a1ad-4dfe-a4ef-8f4255ab43a7" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/e37858aa-dc68-4277-8146-14db017a9f57" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/83590cad-f8a0-4393-b5eb-43d3e264386d" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/72e2f766-cd58-4fc8-8a02-ab354232b2b5" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/216c3058-948d-4357-9d7b-bc93003e9465" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/04dfe900-27a1-42c5-b8f3-fbb0963399c6" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/5361c063-3a88-4817-97a2-7de181fc10dc" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/72e2f766-cd58-4fc8-8a02-ab354232b2b5" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/ec319143-17d8-4827-aefd-dea64b4679b6" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/f2d2b596-d46e-4516-9ee7-c45bb6dedf51" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/e5839666-9106-4d33-a9ed-5da4f3cb1815" width="200" style="margin: 5px;" />
