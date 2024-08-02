@@ -24,7 +24,9 @@ class SharedPrefService {
       Map<String, dynamic> userMap = jsonDecode(userJson);
       return NewUser.fromJson(userMap);
     }
-    return null;
+      NewUser newUser=NewUser(email: email, name: "Bilinmiyor", age: null, height: null, weight: null, additionalInfo: null, gender: null, steps: null);
+      SharedPrefService.saveUserInfo(newUser);
+     return newUser;
   }
 
   static Future<void> updateUserProfile(NewUser userInfo) async {
