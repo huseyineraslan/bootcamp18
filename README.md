@@ -251,13 +251,13 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
     <img src="https://github.com/user-attachments/assets/5361c063-3a88-4817-97a2-7de181fc10dc" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/04dfe900-27a1-42c5-b8f3-fbb0963399c6" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/ec319143-17d8-4827-aefd-dea64b4679b6" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/e5839666-9106-4d33-a9ed-5da4f3cb1815" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/751a6c94-f7d6-4e04-887a-d1ac31a11b94" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/e5839666-9106-4d33-a9ed-5da4f3cb1815" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/badc5057-7c02-4d84-9bf0-f3070eee3b6b" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/af616a45-622a-47bd-af60-65b4f38c6d89" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/86b30232-6a0b-40d0-ad09-b22be09f95d4" width="200" style="margin: 5px;" />
-    <img src="https://github.com/user-attachments/assets/3f1ada6a-f6a0-4220-916d-9bf13464d3b5" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/62920116-d625-444b-9459-de16dcf4ac59" width="200" style="margin: 5px;" />
+    <img src="https://github.com/user-attachments/assets/3f1ada6a-f6a0-4220-916d-9bf13464d3b5" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/24381c74-2c27-4638-9515-4283c7125806" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/00403b5c-5453-4bdc-a4ff-fe0e61067066" width="200" style="margin: 5px;" />
     <img src="https://github.com/user-attachments/assets/709b1197-6f0f-4016-81f1-1e557b7b0931" width="200" style="margin: 5px;" />
