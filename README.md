@@ -19,7 +19,7 @@
 
 
 # Slogan
-Antik Yunan'ın gücü yapay zekayla bütünleşti.
+Antik Çağların Gücü Yapay Zeka İle Bütünleşti
 
 # Ürün İsmi Hakkında:
 “Proodos”kelimesi Antik Yunan’da “ilerleme” veya “gelişme” anlamına gelirdi. 
