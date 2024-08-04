@@ -79,12 +79,11 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
 </details>
 
+
 <details>
   <summary><h2>Sprint 1</h2></summary>
 
  
-
-
 
  <details>
   <summary><h3>Sprint 1 - Uygulama Ekran Görüntüleri</h3></summary> 
@@ -112,6 +111,7 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 
   
 </details>
+
 
   **Sprint Notları**:
   - Proje yönetimi için 'Trello' kullanılmasına karar verilmiştir.
