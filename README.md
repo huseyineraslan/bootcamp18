@@ -82,24 +82,20 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
 <details>
   <summary><h2>Sprint 1</h2></summary>
 
- <summary><h3>Sprint 1 - Uygulama Ekran Görüntüleri</h3></summary> 
-
-  ![Ekran görüntüsü 2024-07-07 104751](https://github.com/huseyineraslan/bootcamp18/assets/159646627/ba5ff10f-6ac4-44ef-a4d8-a39c3c180440)
-
-  ![Ekran görüntüsü 2024-07-07 104759](https://github.com/huseyineraslan/bootcamp18/assets/159646627/77faf57e-f3e0-4829-8095-201f9d105a0e)
-
-  ![Ekran görüntüsü 2024-07-07 104805](https://github.com/huseyineraslan/bootcamp18/assets/159646627/9df29ad2-9198-4226-9044-be9a0d5ded54)
-
-![Ekran görüntüsü 2024-07-07 104813](https://github.com/huseyineraslan/bootcamp18/assets/159646627/a048487f-7533-4bd1-8e3d-31655c7b8501)
-
-![Ekran görüntüsü 2024-07-07 104832](https://github.com/huseyineraslan/bootcamp18/assets/159646627/22b88823-dc93-4e01-9738-2ce4d72f2d65)
+ 
 
 
 
-
-
-
-  </details>
+ <details>
+  <summary><h3>Sprint 1 - Uygulama Ekran Görüntüleri</h3></summary> 
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/ba5ff10f-6ac4-44ef-a4d8-a39c3c180440" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/77faf57e-f3e0-4829-8095-201f9d105a0e" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/9df29ad2-9198-4226-9044-be9a0d5ded54" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/a048487f-7533-4bd1-8e3d-31655c7b8501" width="23%" style="margin: 1%;" />
+    <img src="https://github.com/huseyineraslan/bootcamp18/assets/159646627/22b88823-dc93-4e01-9738-2ce4d72f2d65" width="23%" style="margin: 1%;" />
+  </div>
+</details>
 
 <details>
   <summary><h3>Sprint 1 - Sprint Board Güncelleme Ekran Görüntüleri</h3></summary> 
