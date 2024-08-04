@@ -336,6 +336,9 @@ Uygulama aynı zamanda çok dilli destek sunarak, farklı dil kökenlerinden gel
           - Bildirimleri ayarlamaya çalıştık 
 
 
+## Uygulama Videosu
+
+[![Prodoos Fit Uygulama Videosu](https://img.youtube.com/vi/fCCmF7y-ICo/0.jpg)](https://youtu.be/fCCmF7y-ICo?feature=shared)
 
 
 # bootcamp_app_18
